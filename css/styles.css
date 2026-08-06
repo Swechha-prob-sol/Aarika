@@ -108,117 +108,360 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-30px); }
 }
-.categories, .featured-products {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 3rem 2rem;
-    background: #ffffff;
-    border-radius: 15px;
+/* =======================================================
+   MIDDLE SECTION START
+   Shared layout, Categories, Trending, Promo Banner,
+   Featured Products, Why Shop With Us
+======================================================= */
+
+/* -------------------------------------------------------
+   Shared section layout + headings
+   Reused by every middle section so spacing stays uniform.
+------------------------------------------------------- */
+.categories,
+.trending-products,
+.promo-banner,
+.featured-products,
+.why-shop {
+    width: min(1200px, 100% - 3rem);
+    margin: 5rem auto;
 }
 
-.categories h2, .featured-products h2 {
+.section-head {
+    position: relative;
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 2.5rem;
-    color: #0b1c11;
-    font-weight: 800;
 }
 
-.category-grid, .products-grid {
+.section-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #c59b5f;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.section-head h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #112c1b;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.section-link {
+    position: absolute;
+    right: 0;
+    bottom: 0.4rem;
+    color: #112c1b;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.section-link:hover {
+    color: #c59b5f;
+    border-bottom-color: #c59b5f;
+}
+
+/* -------------------------------------------------------
+   Categories
+   Three image cards: Women / Men / Kids.
+------------------------------------------------------- */
+.category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
 }
 
 .category-card {
-    background: #f8f9fa;
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.category-card:hover {
-    background: #ffffff;
-    transform: translateY(-8px);
-    border-color: #0b1c11;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-}
-.category-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.category-card:hover .category-icon {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.category-card h3 {
-    font-size: 1.4rem;
-    color: #0b1c11;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.category-card p {
-    color: #666666;
-    font-size: 0.9rem;
-}
-
-.product-card {
-    background: #ffffff;
-    border-radius: 15px;
+    position: relative;
+    border-radius: 14px;
     overflow: hidden;
-    border: 1px solid #e0e0e0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.product-card:hover {
-    transform: translateY(-8px);
-    border-color: #0b1c11;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-}
-.product-image {
-    font-size: 5rem;
-    padding: 2rem;
-    background: #f8f9fa;
+    background: #f7f4ee;
+    min-height: 320px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.product-card:hover .product-image {
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
     transform: scale(1.05);
 }
 
-.product-card h3 {
-    padding: 1.5rem 1rem 0;
-    font-size: 1.2rem;
-    color: #0b1c11;
+/* Dark gradient keeps the label readable on any image. */
+.category-body {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 1.5rem;
+    color: #ffffff;
+    background: linear-gradient(to top, rgba(13, 34, 21, 0.85), rgba(13, 34, 21, 0));
+}
+
+.category-body h3 {
+    font-size: 1.5rem;
     font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.category-link {
+    color: #f2e9d8;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.category-link:hover {
+    color: #c59b5f;
+}
+
+/* -------------------------------------------------------
+   Product cards
+   Shared by Trending Products and Featured Products.
+------------------------------------------------------- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e6e0d6;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: #c59b5f;
+    box-shadow: 0 12px 28px rgba(17, 44, 27, 0.12);
+}
+
+/* Fixed aspect ratio so images of any size stay consistent. */
+.product-media {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: #f7f4ee;
+    overflow: hidden;
+}
+
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-media img {
+    transform: scale(1.05);
+}
+
+.product-tag {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: #112c1b;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+}
+
+.product-info {
+    padding: 1rem 1rem 0.5rem;
+    flex-grow: 1;
+}
+
+.product-category {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin-bottom: 0.25rem;
+}
+
+.product-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #112c1b;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
 }
 
 .price {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    color: #c59b5f;
-    padding: 0.5rem 1rem;
+    color: #112c1b;
+}
+
+.price-old {
+    font-size: 0.9rem;
+    color: #9a9a9a;
+    text-decoration: line-through;
 }
 
 .add-btn {
-    width: 90%;
-    padding: 0.8rem;
-    margin: 1rem auto 1.5rem;
-    display: block;
-    background: #0b1c11;
+    width: calc(100% - 2rem);
+    margin: 0.75rem 1rem 1rem;
+    padding: 0.7rem;
+    background: #112c1b;
     color: #ffffff;
-    box-shadow: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .add-btn:hover {
-    background: #1b3824;
-    transform: translateY(-2px) scale(1.02);
+    background: #1b432a;
 }
+
+/* -------------------------------------------------------
+   Promotional Banner
+   Image sits behind an overlay; swap the src to update.
+------------------------------------------------------- */
+.promo-banner {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #112c1b;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.promo-banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+}
+
+.promo-content {
+    position: relative;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    max-width: 34rem;
+    color: #ffffff;
+}
+
+.promo-content h2 {
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+}
+
+.promo-text {
+    color: #e8e2d6;
+    margin-bottom: 1.75rem;
+}
+
+.promo-btn {
+    display: inline-block;
+    background: #c59b5f;
+    color: #112c1b;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.promo-btn:hover {
+    background: #d8b177;
+    transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------
+   Why Shop With Us
+------------------------------------------------------- */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    background: #f7f4ee;
+    border: 1px solid #e6e0d6;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+}
+
+.why-card {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.why-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #112c1b;
+    margin-bottom: 0.3rem;
+}
+
+.why-card p {
+    font-size: 0.85rem;
+    color: #6b6b6b;
+}
+
+/* -------------------------------------------------------
+   Middle section responsive tweaks
+------------------------------------------------------- */
+@media (max-width: 700px) {
+    .categories,
+    .trending-products,
+    .promo-banner,
+    .featured-products,
+    .why-shop {
+        margin: 3.5rem auto;
+    }
+
+    /* Stack the "View All" link under the heading on small screens. */
+    .section-link {
+        position: static;
+        display: inline-block;
+        margin-top: 0.75rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .category-card,
+    .category-card img {
+        min-height: 260px;
+    }
+}
+
+/* =======================================================
+   MIDDLE SECTION END
+======================================================= */
 
 .testimonials {
     max-width: 1200px;
