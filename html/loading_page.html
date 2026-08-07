@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="refresh" content="3; url=../index.html">
+    <title>AARIKA Loading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box
+        }
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:url("../photos/loadingbackimg1.png") center/cover no-repeat;
+            overflow:hidden;
+        }
+        .box{
+            text-align:center;
+            margin-top:220px;
+        }
+        h1{
+            font:600 72px "Cormorant Garamond",serif;
+            letter-spacing:8px;
+            color:#f7f5ef;
+            animation:fade 1s;
+        }
+        h2{
+            font:300 18px Montserrat,sans-serif;
+            letter-spacing:10px;
+            color:#c9a85b;
+            margin:8px 0 25px;
+            animation:fade 1.4s;
+        }
+        .line{
+            width:180px;
+            height:1px;
+            background:#c9a85b;
+            margin:0 auto 30px;
+        }
+        .load{
+            font:400 20px Montserrat,sans-serif;
+            letter-spacing:6px;
+            color:#d8bf77;
+            margin-bottom:18px;
+            animation:glow 2s infinite;
+        }
+        .load span{
+            opacity:0;
+            animation:dots 1.5s infinite;
+        }
+        .load span:nth-child(2){
+            animation-delay:.3s
+        }
+        .load span:nth-child(3){
+            animation-delay:.6s
+        }
+        .bar{
+            width:500px;
+            height:10px;
+            border:2px solid #c9a85b;
+            overflow:hidden;
+        }
+        .fill{
+            height:100%;
+            width:100%;
+            background:#d7bb71;
+            position:relative;
+        }
+        .fill:after{
+            content:"";
+            position:absolute;
+            left:-30%;
+            top:0;
+            width:30%;
+            height:100%;
+            background:linear-gradient(90deg,transparent,#fff,transparent);
+            animation:shine 1.5s linear infinite;
+        }
+        .tag{
+            margin-top:18px;
+            font:300 14px Montserrat,sans-serif;
+            letter-spacing:4px;
+            color:#c9a85b;
+        }
+        @keyframes shine{
+            from{left:-30%}
+            to{left:130%}
+        }
+        @keyframes glow{
+            50%{text-shadow:0 0 12px #ffe8a3}
+        }
+        @keyframes fade{
+            from{opacity:0;transform:translateY(20px)}
+            to{opacity:1;transform:translateY(0)}
+        }
+        @keyframes dots{
+            0%,20%{opacity:0}
+            50%,100%{opacity:1}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>AARIKA</h1>
+        <h2>SINCE 2026</h2>
+        <div class="line"></div>
+        <div class="load">
+            LOADING
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+        <div class="bar">
+            <div class="fill"></div>
+        </div>
+        <div class="tag">
+            CRAFTED WITH CARE, INSPIRED BY NATURE
+        </div>
+    </div>
+</body>
+</html>
