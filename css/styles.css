@@ -147,19 +147,7 @@ body {
 }
 
 .cart-badge {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #c59b5f;
-    color: #0b1c11;
-    font-size: 0.7rem;
-    font-weight: 700;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
 }
 
 .nav-buttons {
@@ -195,7 +183,7 @@ body {
     border: 1px solid #c59b5f;
 }
 .signup-btn:hover {
-    background: #d8b177;
+    background: #e6dbca;
     border-color: #d8b177;
 }
 .hero {
