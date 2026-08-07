@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StyleHub - Premium Fashion Store</title>
+    <title>Aarika - Premium Fashion Store</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- Navigation Bar. -->
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>Free Shipping on all orders above ₹999 | Easy 7 Days Returns</p>
+    </div>
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">StyleHub</div>
+            <div class="logo">
+                <img src="../photos/logo.png" alt="Aarika Logo" class="logo-img">
+            </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#shop" class="nav-link">Shop</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#women" class="nav-link">Women</a></li>
+                <li><a href="#men" class="nav-link">Men</a></li>
+                <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="#sale" class="nav-link">Sale</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-icons">
-                <a href="#" class="icon-link">🔍</a>
+                <div class="search-container">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                    <button class="search-icon">🔍</button>
+                </div>
                 <a href="#" class="icon-link">❤️</a>
-                <a href="#" class="icon-link">🛒</a>
+                <a href="#" class="cart-link">🛒<span class="cart-badge">1</span></a>
+                <a href="#" class="icon-link">👤</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="nav-btn login-btn">Login</a>
+                <a href="#" class="nav-btn signup-btn">Sign Up</a>
             </div>
         </div>
     </nav>
@@ -28,12 +46,16 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Summer Collection 2024</h1>
-            <p>Discover premium fashion that defines your style</p>
-            <button class="cta-button">Shop Now</button>
+            <p class="hero-label">NEW COLLECTION 2026</p>
+            <h1>Luxury Fashion for Every Occasion</h1>
+            <p class="hero-subtitle">Timeless styles crafted for the modern you.</p>
+            <div class="hero-buttons">
+                <button class="cta-button primary-btn">Shop Now</button>
+                <button class="cta-button secondary-btn">Explore Collection</button>
+            </div>
         </div>
         <div class="hero-image">
-            <div class="hero-placeholder">✨</div>
+            <img src="./photos/img1.png" alt="Woman in elegant green traditional wear" class="hero-img">
         </div>
     </section>
 
