@@ -1,0 +1,226 @@
+/* HTML:
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>Free Shipping on all orders above ₹999 | Easy 7 Days Returns</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../photos/logo.png" alt="Aarika Logo" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#women" class="nav-link">Women</a></li>
+                <li><a href="#men" class="nav-link">Men</a></li>
+                <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="#sale" class="nav-link">Sale</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                </div>
+                <a href="#" class="icon-link">❤️</a>
+                <a href="#" class="cart-link">🛒<span class="cart-badge">1</span></a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#" class="nav-btn login-btn">Login</a>
+                <a href="#" class="nav-btn signup-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+*/
+
+.top-banner {
+    background: #1a3a24;
+    color: #ffffff;
+    padding: 0.6rem 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.navbar {
+    background: #0b1c11;
+    padding: 0.8rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(197, 155, 95, 0.15);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+}
+
+.logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 65px;
+    width: auto;
+    filter: brightness(0.66) saturate(0.9);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex: 1;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+.nav-link:hover {
+    color: #c59b5f;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #c59b5f;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(197, 155, 95, 0.3);
+    border-radius: 25px;
+    padding: 0.4rem 0.8rem;
+    width: 140px;
+    flex-shrink: 0;
+}
+
+.search-input {
+    background: none;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    flex: 1;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.3rem;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-icon {
+    cursor: pointer;
+    color: #c59b5f;
+    text-decoration: none;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+ .icon-link {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.cart-link {
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cart-link:hover {
+    transform: scale(1.15);
+}
+
+.cart-badge {
+    display: none;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 0.8rem;
+    flex-shrink: 0;
+}
+
+.nav-btn {
+    padding: 0.45rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.login-btn {
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+.login-btn:hover {
+    background: #ffffff;
+    color: #0b1c11;
+}
+
+.signup-btn {
+    background: #c59b5f;
+    color: #0b1c11;
+    border: 1px solid #c59b5f;
+}
+.signup-btn:hover {
+    background: #e6dbca;
+    border-color: #d8b177;
+}
+
+@media (max-width: 1024px) {
+    .nav-container { gap: 1rem; }
+    .nav-menu { gap: 1.5rem; }
+    .search-container { width: 160px; }
+}
+
+@media (max-width: 768px) {
+    .nav-menu { gap: 1rem; font-size: 0.9rem; }
+    .nav-container { flex-wrap: wrap; gap: 1rem; }
+    .search-container { width: 150px; }
+    .nav-buttons { gap: 0.5rem; }
+    .nav-btn { padding: 0.4rem 1rem; font-size: 0.85rem; }
+}
