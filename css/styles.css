@@ -649,6 +649,11 @@ body {
         gap: 1rem;
     }
 
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
     .category-card,
     .category-card img {
         min-height: 260px;
