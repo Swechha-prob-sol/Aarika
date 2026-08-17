@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories Menu</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            background-color: #fcf5ee;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .menu-modal {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e0e0e0;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .menu-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+        }
+
+        .menu-icon-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #333;
+            padding: 0.5rem;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #f5f5f5;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.2s;
+        }
+
+        .category-item:hover {
+            background: #fcf5ee;
+        }
+
+        .category-item:last-child {
+            border-bottom: none;
+        }
+
+        .category-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 1rem;
+            background: #eee;
+        }
+
+        .category-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .category-name {
+            flex: 1;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .arrow-right {
+            color: #aaa;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-modal">
+        <div class="menu-header">
+            <button class="menu-icon-btn" onclick="history.back()">←</button>
+            <h2>Categories</h2>
+            <button class="menu-icon-btn">🔍</button>
+        </div>
+        <ul class="category-list">
+            <a href="../index.html" class="category-item">
+                <div class="category-icon-wrapper">🏠</div>
+                <span class="category-name">Home</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="Men.html" class="category-item">
+                <img src="../photos/category_men.jpeg" alt="Men" class="category-img">
+                <span class="category-name">Men</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="Women.html" class="category-item">
+                <img src="../photos/category_women.jpeg" alt="Women" class="category-img">
+                <span class="category-name">Women</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="Kids.html" class="category-item">
+                <img src="../photos/category_kids.jpeg" alt="Kids" class="category-img">
+                <span class="category-name">Kids</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="NewArrivals.html" class="category-item">
+                <img src="../photos/trending_women.jpg" alt="New Arrivals" class="category-img">
+                <span class="category-name">New Arrivals</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="Wishlist.html" class="category-item">
+                <div class="category-icon-wrapper">❤️</div>
+                <span class="category-name">Wishlist</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="sales.html" class="category-item">
+                <img src="../photos/promo.png" alt="Sale" class="category-img">
+                <span class="category-name">Sale</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="Cart.html" class="category-item">
+                <div class="category-icon-wrapper">🛒</div>
+                <span class="category-name">Cart</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="MyAccount.html" class="category-item">
+                <div class="category-icon-wrapper">👤</div>
+                <span class="category-name">My Account</span>
+                <span class="arrow-right">></span>
+            </a>
+            <a href="Contact.html" class="category-item">
+                <div class="category-icon-wrapper">📞</div>
+                <span class="category-name">Contact</span>
+                <span class="arrow-right">></span>
+            </a>
+        </ul>
+    </div>
+
+</body>
+</html>
