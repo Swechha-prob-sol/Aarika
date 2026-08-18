@@ -1,7 +1,5 @@
 {
-  "rewrites": {
-    "beforeFiles": [
-      { "source": "/", "destination": "/html/loading_page.html" }
-    ]
-  }
+  "rewrites": [
+    { "source": "/", "destination": "/html/loading_page.html" }
+  ]
 }
