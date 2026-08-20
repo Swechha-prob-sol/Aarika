@@ -8,4 +8,4 @@ Visit the app here: https://aarika-chi.vercel.app/
 
 ## Getting Started
 
-Follow the instructions to get started with StyleHub.
+Follow the instructions to get started with Aarika.
