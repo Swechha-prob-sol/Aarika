@@ -1,4 +1,4 @@
-# StyleHub
+# Aarika
 
 A modern style management application.
 
