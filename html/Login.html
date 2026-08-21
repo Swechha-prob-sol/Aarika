@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In | AARIKA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="auth-page">
+  <main class="authentication-page">
+    <section class="authentication-card">
+      <img
+        src="../photos/logo_my_account.png"
+        alt="AARIKA"
+        class="auth-logo"
+      >
+
+      <h1 class="auth-heading">Welcome back</h1>
+      <p class="auth-subtext">Log in to your account</p>
+
+      <form id="login-form" class="auth-form" action="#" method="post">
+
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <div class="input-wrapper">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2.5" y="4.5" width="15" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M3 5.5L10 11L17 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="input-wrapper has-toggle">
+            <span class="input-icon" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="9" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                <path d="M6.5 9V6.5a3.5 3.5 0 0 1 7 0V9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+            <button
+              type="button"
+              class="password-toggle"
+              id="login-password-toggle"
+              aria-label="Show password"
+            >
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 10C1.5 10 4.5 4.5 10 4.5C15.5 4.5 18.5 10 18.5 10C18.5 10 15.5 15.5 10 15.5C4.5 15.5 1.5 10 1.5 10Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="form-error" class="form-error" role="alert" hidden></div>
+
+        <button type="submit" class="auth-button" id="login-button">Log In</button>
+      </form>
+
+      <p class="account-switch">Don&rsquo;t have an account? <a href="../html/SignUp.html">Sign up</a></p>
+    </section>
+  </main>
+</body>
+</html>
