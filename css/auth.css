@@ -370,3 +370,11 @@ a {
     padding: var(--space-lg) var(--space-md);
   }
 }
+
+/* ---------------------------------------------------------
+   13. Required Field Indicator
+   --------------------------------------------------------- */
+.form-group:has(input[required]) > label::before {
+  content: "* ";
+  color: #a13a3a;
+}
