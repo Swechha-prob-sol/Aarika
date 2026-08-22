@@ -270,13 +270,27 @@ a {
     display: none;
 }
 
-/* Full-width dropdown, anchored directly between the fixed top
-   navbar (~97px) and the fixed bottom nav (~84px) so it always
-   spans exactly that gap, flush at both ends, regardless of how
-   many links are in the list. No vh/dvh (those retrigger on
-   mobile address-bar resize) and no height/max-height animation
-   (guessed caps look abrupt) -- the box is natively the right
-   size, and open/close is done purely with opacity + transform. */
+/* Full-width dropdown, anchored between the fixed top navbar
+   (~97px) and the fixed bottom nav (~84px), no JS, no vh/dvh, no
+   height/max-height animation.
+
+   Deliberately NOT done as `top: 97px; bottom: 84px;` (which
+   asks the browser to solve height = containingBlockHeight - 97
+   - 84). On Android Chrome that containingBlockHeight can lag
+   behind the address bar's real-time show/hide, so that solved
+   height is briefly wrong -- a gap above the bottom nav that
+   snaps shut once the browser catches up (exactly the bug this
+   replaces).
+
+   Instead this uses `bottom: 0`, the same anchor the already-solid
+   .bottom-nav uses -- a single edge position, not a height solved
+   from two opposing offsets -- and reserves the bottom nav's
+   height as inner padding. The box still technically extends the
+   full 84px behind .bottom-nav, but that sliver is opaque and
+   z-indexed above us, so it's never seen; the *content* (the
+   links, via space-between below) ends exactly at .bottom-nav's
+   top edge. Visibility is toggled with opacity + transform only,
+   so nothing here is ever size-animated. */
 .mobile-navbar .mobile-menu-panel {
     display: flex !important;
     flex-direction: column;
@@ -284,17 +298,16 @@ a {
     gap: 0.35rem;
     position: fixed;
     top: 97px;
-    bottom: 84px;
+    bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 0 84px;
     list-style: none;
     background: rgba(11, 28, 17, 0.97);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 2px solid rgba(197, 155, 95, 0.25);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45),
                 0 0 0 1px rgba(197, 155, 95, 0.08) inset;
     z-index: 1090;
@@ -322,9 +335,10 @@ a {
     border-bottom: 1px solid rgba(197, 155, 95, 0.08);
 }
 
-.mobile-navbar .mobile-menu-panel li:last-child {
-    border-bottom: none;
-}
+/* This row's bottom border is now the dropdown's actual visible
+   terminus (it sits right above .bottom-nav), so -- unlike before,
+   when the panel's own border-bottom served that purpose -- it
+   keeps its divider instead of losing it. */
 
 .mobile-navbar .mobile-menu-panel li a {
     display: flex;
