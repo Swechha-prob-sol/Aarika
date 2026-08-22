@@ -290,16 +290,19 @@ a {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45),
                 0 0 0 1px rgba(197, 155, 95, 0.08) inset;
     z-index: 1090;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.35s ease,
                 padding 0.35s ease;
 }
 
 .mobile-navbar .mobile-menu[open] .mobile-menu-panel {
-    max-height: 700px;
+    
+    height: calc(100vh - 97px - 84px);
+    height: calc(100dvh - 97px - 84px);
+    overflow-y: auto;
     opacity: 1;
     padding: 0.4rem 0;
 }
