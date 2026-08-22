@@ -1,4 +1,3 @@
-
 :root {
     --nav-green: #0b1c11;
     --nav-green-2: #1a3a24;
@@ -275,7 +274,7 @@ a {
 .mobile-navbar .mobile-menu-panel {
     display: flex !important;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
     position: absolute;
     top: 100%;
     left: 0;
@@ -302,7 +301,7 @@ a {
 .mobile-navbar .mobile-menu[open] .mobile-menu-panel {
     max-height: 700px;
     opacity: 1;
-    padding: 0.75rem 0;
+    padding: 0.4rem 0;
 }
 
 .mobile-navbar .mobile-menu-panel li {
@@ -317,7 +316,7 @@ a {
 .mobile-navbar .mobile-menu-panel li a {
     display: flex;
     align-items: center;
-    padding: 0.85rem 1.8rem;
+    padding: 0.55rem 1.8rem;
     color: #e8e2d6;
     text-decoration: none;
     font-size: 0.95rem;
