@@ -270,13 +270,18 @@ a {
     display: none;
 }
 
-/* Full-width slide-down dropdown. */
+/* Full-width slide-down dropdown. Anchored with top+bottom (not a
+   vh/dvh height calc) so it fills the navbar-to-bottom-nav gap via
+   normal fixed-position layout, and stays in sync instantly when the
+   browser's own address bar shows/hides on scroll, with nothing to
+   visibly "catch up" via a transition. */
 .mobile-navbar .mobile-menu-panel {
     display: flex !important;
     flex-direction: column;
     gap: 0;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 97px;
+    bottom: 84px;
     left: 0;
     right: 0;
     width: 100%;
@@ -290,18 +295,19 @@ a {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45),
                 0 0 0 1px rgba(197, 155, 95, 0.08) inset;
     z-index: 1090;
-    height: 0;
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
                 opacity 0.35s ease,
                 padding 0.35s ease;
 }
 
 .mobile-navbar .mobile-menu[open] .mobile-menu-panel {
-    
-    height: calc(100vh - 97px - 84px);
-    height: calc(100dvh - 97px - 84px);
+    /* Large enough that it never actually clips the top/bottom-anchored
+       fill height above — it only exists so the closed -> open state
+       has something to animate from 0. */
+    max-height: 100vh;
     overflow-y: auto;
     opacity: 1;
     padding: 0.4rem 0;
