@@ -13,56 +13,49 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link href="cart.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="../css/cart.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="top-bar">
+    <!-- Top Banner -->
+    <div class="top-banner">
         <p>Free Shipping on all orders above ₹999 | Easy 7 Days Returns</p>
     </div>
-    <header>
-        <div class="container">
-            <!-- Logo -->
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <img src="../photos/logo1.png" alt="AARIKA">
+                <a href="../index.html"><img src="../photos/logo.png" alt="Aarika Logo" class="logo-img"></a>
             </div>
-            <!-- Navigation -->
-            <nav>
-                <ul>
-                    <li ><a href="index.html">Home</a></li>
-                    <li><a href="women.html">Women </a></li>
-                    <li><a href="men.html">Men </a></li>
-                    <li ><a href="kids.html">Kids</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Collections</a></li>
-                    <li><a href="#">Sale</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav><p>     </p>
-            <!-- Right Side -->
-            <div class="header-right">
-                <!-- Search -->
-                <div class="search-box">
-                    <input type="text" placeholder="Search products...">🔍
+            <div class="nav-center">
+                <div class="menu-icon">
+                    <span class="hamburger">☰</span>
+                    <ul class="nav-menu">
+                         <li><a href="../index.html" class="nav-link">Home</a></li>
+                         <li><a href="women.html" class="nav-link">Women</a></li>
+                         <li><a href="men.html" class="nav-link">Men</a></li>
+                         <li><a href="kids.html" class="nav-link">Kids</a></li>
+                         <li><a href="NewArrivals.html" class="nav-link">New Arrival</a></li>
+                         <li><a href="sales.html" class="nav-link">Sale</a></li>
+                         <li><a href="Contact.html" class="nav-link">Contact</a></li>
+                         <li><a href="Login.html" class="nav-link">Login</a></li>
+                         <li><a href="SignUp.html" class="nav-link">Signup</a></li>
+                    </ul>
                 </div>
-                <!-- Icons -->
-                <div class="icons">
-                    <a href="#"><i class="fa-regular fa-heart"></i></a>
-                    <a href="cart.html" class="cart" class="active">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span>0</span>
-                    </a>
-                    <a href="#"><i class="fa-regular fa-user"></i></a>
-                </div>
-                <!-- Buttons -->
-                <div class="auth">
-                    <button class="login">Login</button>
-                    <button class="signup">Sign Up</button>
+            </div>
+
+            <div class="nav-icons">
+                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="Wishlist.html" class="icon-link">♡</a>
+                <div class="account-container">
+                    <span class="account-label">My Account</span>
+                    <a href="MyAccount.html" class="icon-link account-icon-btn">👤</a>
                 </div>
             </div>
         </div>
-    </header>
-<!-- CART PAGE -->
+    </nav>
 <main class="page">
 
     <div class="breadcrumb">
@@ -512,175 +505,104 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
 </main>
 
 
-<!-- FOOTER -->
-<footer>
+    <!-- Newsletter and Footer Section -->
+    <div class="footer-wrapper">
 
-    <div class="footer-container">
 
-        <div class="footer-column">
-            <div class="footer-logo">
-                <img src="../photos/logo1.png" alt="Leaf & Loom">
+        <footer class="footer-main">
+            <div class="footer-container">
+                <div class="footer-column brand-column">
+                    <div class="footer-logo">
+                        <img src="../photos/logo.png" alt="Aarika Logo" class="brand-logo-img">
+                    </div>
+                    <p class="brand-desc">Timeless Fashion.<br>Effortless Elegance.</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="kids.html">Kids</a></li>
+                        <li><a href="NewArrivals.html">New Arrivals</a></li>
+                        <li><a href="sales.html">Sale</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Orders & Returns</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help & Contact</h4>
+                    <p><strong>Phone:</strong> +91 86390 86245</p>
+                    <p><strong>Email:</strong> support@aarika.com</p>
+                    <p><strong>Address:</strong> 123 Fashion Street,<br>New Delhi, India - 110001</p>
+                    <h4 class="we-accept">We accept</h4>
+                    <div class="payment-methods">
+                        <span class="pay-badge" style="color:#007BFF">UPI</span>
+                    </div>
+                </div>
+                <div class="footer-column newsletter-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and exclusive offers.</p>
+                    <form class="mini-newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
             </div>
-
-            <p>
-                Timeless fashion.<br>
-                Naturally made for you.
-            </p>
-
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <div class="footer-bottom-bar">
+                <p>&copy; 2026 Aarika. All Rights Reserved.</p>
             </div>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>SHOP</h4>
-            <ul>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li><a href="#">Collections</a></li>
-            </ul>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>HELP</h4>
-            <ul>
-                <li><a href="#">Track Order</a></li>
-                <li><a href="#">Returns & Exchanges</a></li>
-                <li><a href="#">Shipping Policy</a></li>
-                <li><a href="#">Size Guide</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>COMPANY</h4>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Sustainability</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-
-
-        <div class="footer-column">
-            <h4>CONTACT</h4>
-            <p><i class="fa-solid fa-phone"></i> +91 70189 67685</p>
-            <p><i class="fa-solid fa-envelope"></i> support@leafandloom.com</p>
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                New Delhi, India
-            </p>
-        </div>
-
+        </footer>
     </div>
 
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 Leaf & Loom. All Rights Reserved.</p>
-
-        <div>
-            <a href="#">Privacy Policy</a>
-            <span>|</span>
-            <a href="#">Terms & Conditions</a>
-        </div>
-    </div>
-
-</footer>
-<script>
-    // Select / deselect all
-    const selectAll = document.getElementById("selectAll");
-
-    selectAll.addEventListener("change", function () {
-        document.querySelectorAll(".item-check").forEach(function (checkbox) {
-            checkbox.checked = selectAll.checked;
-        });
-    });
-
-    // Quantity controls
-    function changeQty(button, change) {
-        const quantityBox = button.parentElement;
-        const quantityText = quantityBox.querySelector("span");
-
-        let quantity = parseInt(quantityText.textContent);
-
-        quantity += change;
-
-        if (quantity < 1) {
-            quantity = 1;
-        }
-
-        quantityText.textContent = quantity;
-    }
-
-    // Remove item
-    function removeItem(button) {
-        const item = button.closest(".cart-item");
-        const productName = item.querySelector("h3").textContent;
-
-        if (confirm("Remove " + productName + " from your cart?")) {
-            item.remove();
-            updateCartCount();
-        }
-    }
-
-    // Buy later
-    function saveLater(button) {
-        const item = button.closest(".cart-item");
-        const productName = item.querySelector("h3").textContent;
-
-        alert(productName + " has been moved to Buy Later.");
-        item.style.opacity = "0.45";
-    }
-
-    // Buy now
-    function buyNow(productName) {
-        alert("Proceeding to checkout for: " + productName);
-    }
-
-    // Buy all
-    function buyAll() {
-        const selected = document.querySelectorAll(".item-check:checked");
-
-        if (selected.length === 0) {
-            alert("Please select at least one product.");
-            return;
-        }
-
-        alert("Proceeding to checkout with " + selected.length + " selected item(s).");
-    }
-
-    // Coupon
-    function applyCoupon() {
-        const input = document.querySelector(".coupon-form input");
-        const code = input.value.trim();
-
-        if (code === "") {
-            alert("Please enter a coupon code.");
-            return;
-        }
-
-        alert("Coupon " + code + " applied successfully!");
-    }
-
-    // Recommendation add to cart
-    function addToCart(productName) {
-        alert(productName + " has been added to your cart!");
-    }
-
-    function updateCartCount() {
-        const count = document.querySelectorAll(".cart-item").length;
-        document.querySelector(".cart-count").textContent = count;
-    }
-</script>
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="bottom-nav-item">
+            <span class="icon">🏠</span>
+            <span class="text">Home</span>
+        </a>
+        <a href="MyAccount.html" class="bottom-nav-item">
+            <span class="icon">👤</span>
+            <span class="text">You</span>
+        </a>
+        <a href="Menu.html" class="bottom-nav-item">
+            <span class="icon">☰</span>
+            <span class="text">Menu</span>
+        </a>
+        <a href="cart.html" class="bottom-nav-item">
+            <span class="icon">🛒</span>
+            <span class="text">Cart</span>
+        </a>
+    </nav>
 </body>
+</html>
+
 </html>
