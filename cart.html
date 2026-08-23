@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf & Loom | Shopping Cart</title>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link href="cart.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="top-bar">
+        <p>Free Shipping on all orders above ₹999 | Easy 7 Days Returns</p>
+    </div>
+    <header>
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo1.png" alt="AARIKA">
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <ul>
+                    <li ><a href="index.html">Home</a></li>
+                    <li><a href="women.html">Women </a></li>
+                    <li><a href="men.html">Men </a></li>
+                    <li ><a href="kids.html">Kids</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Sale</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav><p>     </p>
+            <!-- Right Side -->
+            <div class="header-right">
+                <!-- Search -->
+                <div class="search-box">
+                    <input type="text" placeholder="Search products...">🔍
+                </div>
+                <!-- Icons -->
+                <div class="icons">
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a href="cart.html" class="cart" class="active">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>0</span>
+                    </a>
+                    <a href="#"><i class="fa-regular fa-user"></i></a>
+                </div>
+                <!-- Buttons -->
+                <div class="auth">
+                    <button class="login">Login</button>
+                    <button class="signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- CART PAGE -->
+<main class="page">
+
+    <div class="breadcrumb">
+        Home &nbsp; / &nbsp; Shopping Cart
+    </div>
+
+    <h1 class="page-title">YOUR SHOPPING BAG</h1>
+    <p class="subtitle">5 items waiting for you. Complete your order before your favorites are gone.</p>
+
+
+    <div class="cart-layout">
+
+        <!-- LEFT CART -->
+        <section class="cart-box">
+
+            <div class="cart-header">
+                <h2>Cart Items (5)</h2>
+
+                <label class="select-all">
+                    <input type="checkbox" id="selectAll" checked>
+                    Select All
+                </label>
+            </div>
+
+
+            <!-- ITEM 1 -->
+            <div class="cart-item">
+
+                <input type="checkbox" class="item-check" checked>
+
+                <img class="product-image"
+                     src="images/product1.jpg"
+                     alt="Meadow Maxi Dress">
+
+                <div class="item-info">
+                    <h3>Meadow Maxi Dress</h3>
+                    <p class="item-code">Leaf & Loom · Natural Collection</p>
+
+                    <div class="item-meta">
+                        <label>
+                            Size:
+                            <select>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option selected>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Color:
+                            <select>
+                                <option selected>Green</option>
+                                <option>Ivory</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="item-actions">
+                        <button onclick="buyNow('Meadow Maxi Dress')">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                        <button onclick="saveLater(this)">
+                            <i class="fa-regular fa-bookmark"></i> Buy Later
+                        </button>
+                        <button class="remove" onclick="removeItem(this)">
+                            <i class="fa-regular fa-trash-can"></i> Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item-price-area">
+                    <p class="old-price">₹3,199</p>
+                    <p class="item-price">₹2,799</p>
+
+                    <div class="quantity">
+                        <button onclick="changeQty(this, -1)">−</button>
+                        <span>1</span>
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 2 -->
+            <div class="cart-item">
+
+                <input type="checkbox" class="item-check" checked>
+
+                <img class="product-image"
+                     src="images/kurtis.jpg"
+                     alt="Ivy Kurta Set">
+
+                <div class="item-info">
+                    <h3>Ivy Kurta Set</h3>
+                    <p class="item-code">Leaf & Loom · Everyday Edit</p>
+
+                    <div class="item-meta">
+                        <label>
+                            Size:
+                            <select>
+                                <option>S</option>
+                                <option selected>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Color:
+                            <select>
+                                <option selected>Ivory</option>
+                                <option>Green</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="item-actions">
+                        <button onclick="buyNow('Ivy Kurta Set')">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                        <button onclick="saveLater(this)">
+                            <i class="fa-regular fa-bookmark"></i> Buy Later
+                        </button>
+                        <button class="remove" onclick="removeItem(this)">
+                            <i class="fa-regular fa-trash-can"></i> Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item-price-area">
+                    <p class="old-price">₹2,799</p>
+                    <p class="item-price">₹2,399</p>
+
+                    <div class="quantity">
+                        <button onclick="changeQty(this, -1)">−</button>
+                        <span>1</span>
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 3 -->
+            <div class="cart-item">
+
+                <input type="checkbox" class="item-check" checked>
+
+                <img class="product-image"
+                     src="images/product3.png"
+                     alt="Sage Tier Dress">
+
+                <div class="item-info">
+                    <h3>Sage Tier Dress</h3>
+                    <p class="item-code">Leaf & Loom · New Collection</p>
+
+                    <div class="item-meta">
+                        <label>
+                            Size:
+                            <select>
+                                <option>S</option>
+                                <option selected>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Color:
+                            <select>
+                                <option selected>Sage</option>
+                                <option>Olive</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="item-actions">
+                        <button onclick="buyNow('Sage Tier Dress')">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                        <button onclick="saveLater(this)">
+                            <i class="fa-regular fa-bookmark"></i> Buy Later
+                        </button>
+                        <button class="remove" onclick="removeItem(this)">
+                            <i class="fa-regular fa-trash-can"></i> Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item-price-area">
+                    <p class="old-price">₹2,999</p>
+                    <p class="item-price">₹2,599</p>
+
+                    <div class="quantity">
+                        <button onclick="changeQty(this, -1)">−</button>
+                        <span>1</span>
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 4 -->
+            <div class="cart-item">
+
+                <input type="checkbox" class="item-check" checked>
+
+                <img class="product-image"
+                     src="images/product4.jpg"
+                     alt="Leaf Print Top">
+
+                <div class="item-info">
+                    <h3>Leaf Print Top</h3>
+                    <p class="item-code">Leaf & Loom · Botanical Edit</p>
+
+                    <div class="item-meta">
+                        <label>
+                            Size:
+                            <select>
+                                <option>XS</option>
+                                <option selected>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Color:
+                            <select>
+                                <option selected>Green</option>
+                                <option>White</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="item-actions">
+                        <button onclick="buyNow('Leaf Print Top')">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                        <button onclick="saveLater(this)">
+                            <i class="fa-regular fa-bookmark"></i> Buy Later
+                        </button>
+                        <button class="remove" onclick="removeItem(this)">
+                            <i class="fa-regular fa-trash-can"></i> Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item-price-area">
+                    <p class="old-price">₹1,999</p>
+                    <p class="item-price">₹1,799</p>
+
+                    <div class="quantity">
+                        <button onclick="changeQty(this, -1)">−</button>
+                        <span>1</span>
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 5 -->
+            <div class="cart-item">
+
+                <input type="checkbox" class="item-check" checked>
+
+                <img class="product-image"
+                     src="images/product5.jpg"
+                     alt="Olive Green Kurti">
+
+                <div class="item-info">
+                    <h3>Olive Green Kurti</h3>
+                    <p class="item-code">Leaf & Loom · Earthy Edit</p>
+
+                    <div class="item-meta">
+                        <label>
+                            Size:
+                            <select>
+                                <option>S</option>
+                                <option selected>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Color:
+                            <select>
+                                <option selected>Olive</option>
+                                <option>Green</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="item-actions">
+                        <button onclick="buyNow('Olive Green Kurti')">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                        <button onclick="saveLater(this)">
+                            <i class="fa-regular fa-bookmark"></i> Buy Later
+                        </button>
+                        <button class="remove" onclick="removeItem(this)">
+                            <i class="fa-regular fa-trash-can"></i> Remove
+                        </button>
+                    </div>
+                </div>
+
+                <div class="item-price-area">
+                    <p class="old-price">₹2,299</p>
+                    <p class="item-price">₹1,999</p>
+
+                    <div class="quantity">
+                        <button onclick="changeQty(this, -1)">−</button>
+                        <span>1</span>
+                        <button onclick="changeQty(this, 1)">+</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+        <aside>
+
+            <div class="summary-box">
+
+                <h2>ORDER SUMMARY</h2>
+
+                <div class="summary-row">
+                    <span>Items (5)</span>
+                    <strong>₹11,595</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <strong class="discount">− ₹999</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <strong class="free">FREE</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Estimated Tax</span>
+                    <strong>₹530</strong>
+                </div>
+
+                <div class="total-row">
+                    <span>Total</span>
+                    <span>₹11,126</span>
+                </div>
+
+                <p class="tax-note">Inclusive of applicable taxes</p>
+
+                <button class="buy-all" onclick="buyAll()">
+                    BUY ALL ITEMS &nbsp; → 
+                </button>
+
+                <button class="continue-shopping"
+                        onclick="location.href='index.html'">
+                    CONTINUE SHOPPING
+                </button>
+
+                <div class="secure">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>
+                        Safe & Secure Checkout<br>
+                        Your payment and personal details are protected.
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- COUPON -->
+            <div class="coupon-box">
+                <h4>Have a Coupon?</h4>
+
+                <div class="coupon-form">
+                    <input type="text" placeholder="Enter coupon code">
+                    <button onclick="applyCoupon()">APPLY</button>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- RECOMMENDED -->
+    <section class="recommendations">
+
+        <h2 class="section-title">YOU MAY ALSO LIKE</h2>
+        <div class="leaf-line">Handpicked for You  </div>
+
+        <div class="recommend-grid">
+
+            <div class="recommend-card">
+                <img src="images/product6.jpg" alt="Bloom Floral Dress">
+                <h3>Bloom Floral Dress</h3>
+                <p>₹2,699</p>
+                <button onclick="addToCart('Bloom Floral Dress')">
+                    ADD TO CART
+                </button>
+            </div>
+
+            <div class="recommend-card">
+                <img src="images/trend1.jpg" alt="Floral Aariaki">
+                <h3>Floral Aariaki</h3>
+                <p>₹2,899</p>
+                <button onclick="addToCart('Floral Aariaki')">
+                    ADD TO CART
+                </button>
+            </div>
+
+            <div class="recommend-card">
+                <img src="images/trend2.jpg" alt="Embroidered Kurta">
+                <h3>Embroidered Kurta</h3>
+                <p>₹2,199</p>
+                <button onclick="addToCart('Embroidered Kurta')">
+                    ADD TO CART
+                </button>
+            </div>
+
+            <div class="recommend-card">
+                <img src="images/trend3.jpg" alt="Pastel Printed Set">
+                <h3>Pastel Printed Set</h3>
+                <p>₹2,499</p>
+                <button onclick="addToCart('Pastel Printed Set')">
+                    ADD TO CART
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="images/logo1.png" alt="Leaf & Loom">
+            </div>
+
+            <p>
+                Timeless fashion.<br>
+                Naturally made for you.
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>SHOP</h4>
+            <ul>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Collections</a></li>
+            </ul>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>HELP</h4>
+            <ul>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Size Guide</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>COMPANY</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Sustainability</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>CONTACT</h4>
+            <p><i class="fa-solid fa-phone"></i> +91 70189 67685</p>
+            <p><i class="fa-solid fa-envelope"></i> support@leafandloom.com</p>
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                New Delhi, India
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Leaf & Loom. All Rights Reserved.</p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+
+</footer>
+<script>
+    // Select / deselect all
+    const selectAll = document.getElementById("selectAll");
+
+    selectAll.addEventListener("change", function () {
+        document.querySelectorAll(".item-check").forEach(function (checkbox) {
+            checkbox.checked = selectAll.checked;
+        });
+    });
+
+    // Quantity controls
+    function changeQty(button, change) {
+        const quantityBox = button.parentElement;
+        const quantityText = quantityBox.querySelector("span");
+
+        let quantity = parseInt(quantityText.textContent);
+
+        quantity += change;
+
+        if (quantity < 1) {
+            quantity = 1;
+        }
+
+        quantityText.textContent = quantity;
+    }
+
+    // Remove item
+    function removeItem(button) {
+        const item = button.closest(".cart-item");
+        const productName = item.querySelector("h3").textContent;
+
+        if (confirm("Remove " + productName + " from your cart?")) {
+            item.remove();
+            updateCartCount();
+        }
+    }
+
+    // Buy later
+    function saveLater(button) {
+        const item = button.closest(".cart-item");
+        const productName = item.querySelector("h3").textContent;
+
+        alert(productName + " has been moved to Buy Later.");
+        item.style.opacity = "0.45";
+    }
+
+    // Buy now
+    function buyNow(productName) {
+        alert("Proceeding to checkout for: " + productName);
+    }
+
+    // Buy all
+    function buyAll() {
+        const selected = document.querySelectorAll(".item-check:checked");
+
+        if (selected.length === 0) {
+            alert("Please select at least one product.");
+            return;
+        }
+
+        alert("Proceeding to checkout with " + selected.length + " selected item(s).");
+    }
+
+    // Coupon
+    function applyCoupon() {
+        const input = document.querySelector(".coupon-form input");
+        const code = input.value.trim();
+
+        if (code === "") {
+            alert("Please enter a coupon code.");
+            return;
+        }
+
+        alert("Coupon " + code + " applied successfully!");
+    }
+
+    // Recommendation add to cart
+    function addToCart(productName) {
+        alert(productName + " has been added to your cart!");
+    }
+
+    function updateCartCount() {
+        const count = document.querySelectorAll(".cart-item").length;
+        document.querySelector(".cart-count").textContent = count;
+    }
+</script>
+</body>
+</html>
