@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/basic_style.css">
+    <link rel="stylesheet" href="../css/search.css">
     <link
 href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -44,7 +45,7 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -74,35 +75,35 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
 
     <div class="categories">
 
-        <div class="category">
-            <img src="../photos/dresses1.webp">
+        <a href="search.html?q=dresses" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/dresses1.webp" alt="Dresses">
             <h4>DRESSES</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/kurta_set.jpg">
+        <a href="search.html?q=kurta%20sets" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/kurta_set.jpg" alt="Kurta Sets">
             <h4>KURTA SETS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/tunics.jpg">
+        <a href="search.html?q=tunics" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/tunics.jpg" alt="Tunics">
             <h4>TUNICS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/tops.jpg">
+        <a href="search.html?q=tops" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/tops.jpg" alt="Tops">
             <h4>TOPS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/kurtis.jpg">
+        <a href="search.html?q=kurtis" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/kurtis.jpg" alt="Kurtis">
             <h4>KURTIS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/sarees.jpg">
+        <a href="search.html?q=sarees" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/sarees.jpg" alt="Sarees">
             <h4>SAREES</h4>
-        </div>
+        </a>
 
     </div>
 </section>
@@ -468,6 +469,10 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -481,7 +486,9 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             <span class="text">Cart</span>
         </a>
     </nav>
-</body>
-</html>
 
+    <!-- Global Product Search Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/navbar_search.js"></script>
+</body>
 </html>

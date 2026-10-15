@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Styles - Aarika Premium Fashion</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <!-- Existing Site Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/basic_style.css">
+    <!-- Search Page Styles -->
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p>Free Shipping on all orders above ₹999 | Easy 7 Days Returns</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html"><img src="../photos/logo.png" alt="Aarika Logo" class="logo-img"></a>
+            </div>
+            <div class="nav-center">
+                <div class="menu-icon">
+                    <span class="hamburger">☰</span>
+                    <ul class="nav-menu">
+                         <li><a href="../index.html" class="nav-link">Home</a></li>
+                         <li><a href="../html/women.html" class="nav-link">Women</a></li>
+                         <li><a href="../html/men.html" class="nav-link">Men</a></li>
+                         <li><a href="../html/kids.html" class="nav-link">Kids</a></li>
+                         <li><a href="../html/NewArrivals.html" class="nav-link">New Arrival</a></li>
+                         <li><a href="../html/sales.html" class="nav-link">Sale</a></li>
+                         <li><a href="../html/Contact.html" class="nav-link">Contact</a></li>
+                         <li><a href="../html/Login.html" class="nav-link">Login</a></li>
+                         <li><a href="../html/SignUp.html" class="nav-link">Signup</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nav-icons">
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
+                <a href="Wishlist.html" class="icon-link" title="Wishlist">♡</a>
+                <div class="account-container">
+                    <span class="account-label">My Account</span>
+                    <a href="MyAccount.html" class="icon-link account-icon-btn" title="Account">👤</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- React Search Application Mount Point -->
+    <main id="react-search-root">
+        <!-- Fallback while React loads -->
+        <div style="text-align: center; padding: 5rem 1rem; color: #c59b5f;">
+            <p>Loading Aarika styles...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer-wrapper">
+        <footer class="site-footer">
+            <div class="footer-grid">
+                <div class="footer-column brand-col">
+                    <div class="footer-logo">
+                        <img src="../photos/logo.png" alt="Aarika Logo" class="footer-logo-img">
+                    </div>
+                    <p class="brand-desc">
+                        Aarika brings you curated fashion that celebrates individuality and elegance.
+                        Timeless designs crafted with premium fabrics for modern lifestyles.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="../html/women.html">Women</a></li>
+                        <li><a href="../html/men.html">Men</a></li>
+                        <li><a href="../html/kids.html">Kids</a></li>
+                        <li><a href="../html/NewArrivals.html">New Arrivals</a></li>
+                        <li><a href="../html/sales.html">Sale</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="../html/MyAccount.html">My Account</a></li>
+                        <li><a href="#">Orders & Returns</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Help & Contact</h4>
+                    <p><strong>Phone:</strong> +91 86390 86245</p>
+                    <p><strong>Email:</strong> support@aarika.com</p>
+                    <p><strong>Address:</strong> 123 Fashion Street,<br>New Delhi, India - 110001</p>
+                    <h4 class="we-accept">We accept</h4>
+                    <div class="payment-methods">
+                        <span class="pay-badge" style="color:#007BFF">UPI</span>
+                    </div>
+                </div>
+
+                <div class="footer-column newsletter-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get updates on new arrivals and exclusive offers.</p>
+                    <form class="mini-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Aarika!');">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p>&copy; 2026 Aarika. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bottom Navigation Bar (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="../index.html" class="bottom-nav-item">
+            <span class="icon">🏠</span>
+            <span class="text">Home</span>
+        </a>
+        <a href="search.html" class="bottom-nav-item" style="color: #c59b5f;">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
+        <a href="MyAccount.html" class="bottom-nav-item">
+            <span class="icon">👤</span>
+            <span class="text">You</span>
+        </a>
+        <a href="Menu.html" class="bottom-nav-item">
+            <span class="icon">☰</span>
+            <span class="text">Menu</span>
+        </a>
+        <a href="cart.html" class="bottom-nav-item">
+            <span class="icon">🛒</span>
+            <span class="text">Cart</span>
+        </a>
+    </nav>
+
+    <!-- React 18 UMD Scripts -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Product Metadata Catalog & React App -->
+    <script src="../js/products.js"></script>
+    <script src="../js/search_app.js"></script>
+    <script src="../js/navbar_search.js"></script>
+</body>
+</html>

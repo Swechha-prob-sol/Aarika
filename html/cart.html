@@ -15,6 +15,7 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link href="../css/cart.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/search.css">
 </head>
 
 <body>
@@ -47,7 +48,7 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -589,6 +590,10 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -602,7 +607,9 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             <span class="text">Cart</span>
         </a>
     </nav>
-</body>
-</html>
 
+    <!-- Global Product Search Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/navbar_search.js"></script>
+</body>
 </html>
