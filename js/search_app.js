@@ -109,10 +109,10 @@
                         e("input", {
                             type: "text",
                             className: "main-search-input",
-                            placeholder: "Search for tunics, tops, kurta sets, kurtis, dresses, sarees...",
+                            placeholder: window.innerWidth <= 600 ? "Search styles..." : "Search for tunics, tops, kurta sets, kurtis, dresses, sarees...",
                             value: query,
                             onChange: (evt) => setQuery(evt.target.value),
-                            autoFocus: true
+                            autoFocus: window.innerWidth > 768
                         }),
                         query && e("button", {
                             className: "clear-search-btn",

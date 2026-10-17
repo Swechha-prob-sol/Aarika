@@ -16,7 +16,7 @@ body {
     background: #ffffff;
     color: #333333;
     min-height: 100vh;
-    padding-bottom: 70px;
+    padding-bottom: 0;
     /* Offset for fixed top-banner (~34px) + fixed navbar (~81px) */
     padding-top: 115px;
 }
@@ -1298,9 +1298,9 @@ body {
     }
 }
 
-/* Bottom Navigation Bar */
+/* Bottom Navigation Bar - Hidden on laptop/desktop, shown only on mobile */
 .bottom-nav {
-    display: flex;
+    display: none !important;
     justify-content: space-around;
     align-items: center;
     position: fixed;
@@ -1308,9 +1308,19 @@ body {
     left: 0;
     width: 100%;
     background: #0b1c11;
-    border-top: none;
-    padding: 0.8rem 0;
-    z-index: 1000;
+    border-top: 1px solid rgba(197, 155, 95, 0.2);
+    padding: 0.6rem 0;
+    z-index: 9999;
+}
+
+@media (max-width: 600px) {
+    .bottom-nav {
+        display: flex !important;
+    }
+
+    body {
+        padding-bottom: 70px !important;
+    }
 }
 
 .bottom-nav-item {

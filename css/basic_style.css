@@ -431,4 +431,15 @@ html{
         padding:25px;
     }
 
+}
+
+/* Bottom Navigation Bar - Strictly Hidden on Laptop/Desktop, Shown on Mobile */
+.bottom-nav {
+    display: none !important;
+}
+
+@media(max-width: 600px) {
+    .bottom-nav {
+        display: flex !important;
     }
+}
