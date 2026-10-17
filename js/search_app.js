@@ -152,7 +152,7 @@
                         : e("span", null,
                             "Showing ",
                             e("strong", null, filteredProducts.length),
-                            activeCategory !== "All" ? ` ${activeCategory} styles` : " all styles"
+                            activeCategory !== "All" ? ` products in ${activeCategory}` : " products"
                         )
                 ),
 
@@ -228,7 +228,7 @@
                                 e("button", {
                                     className: `card-add-cart-btn ${isAdded ? "added" : ""}`,
                                     onClick: () => handleAddToCart(product)
-                                }, isAdded ? "✓ Added to Cart" : "ADD TO CART 🛒")
+                                }, isAdded ? "✓ Added to Cart" : "Add to Cart")
                             )
                         );
                     })

@@ -1,0 +1,174 @@
+/* Aarika Global Navbar Search Modal Overlay Styles */
+/* Scoped purely to the search popup so it never affects page layouts */
+
+.nav-search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 28, 19, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 1.5rem 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-sizing: border-box;
+}
+
+.nav-search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-search-overlay * {
+    box-sizing: border-box;
+}
+
+.nav-search-box {
+    max-width: 680px;
+    width: 100%;
+    position: relative;
+    animation: navSearchSlideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes navSearchSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.nav-search-close {
+    position: absolute;
+    top: 1.8rem;
+    right: 2.2rem;
+    background: transparent;
+    border: none;
+    color: #c59b5f;
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-search-close:hover {
+    transform: scale(1.15) rotate(90deg);
+    color: #ffffff;
+}
+
+.nav-search-overlay .search-input-wrap {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #c59b5f;
+    border-radius: 50px;
+    padding: 0.35rem 0.5rem 0.35rem 1.4rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.nav-search-overlay .search-input-icon {
+    font-size: 1.25rem;
+    color: #112c1b;
+    margin-right: 0.75rem;
+    user-select: none;
+}
+
+.nav-search-overlay .main-search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #112c1b;
+    font-size: 1.05rem;
+    font-family: inherit;
+    padding: 0.65rem 0;
+}
+
+.nav-search-overlay .main-search-input::placeholder {
+    color: #7a8a80;
+}
+
+.nav-search-overlay .search-submit-btn {
+    background: #112c1b;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-search-overlay .search-submit-btn:hover {
+    background: #1b432a;
+    transform: translateY(-1px);
+}
+
+.nav-search-dropdown {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e6e0d6;
+    border-radius: 14px;
+    margin-top: 0.8rem;
+    max-height: 420px;
+    overflow-y: auto;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.3);
+}
+
+.nav-search-dropdown .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 0.9rem 1.3rem;
+    border-bottom: 1px solid #f2ede4;
+    cursor: pointer;
+    text-decoration: none;
+    color: #112c1b;
+    transition: background 0.2s ease;
+}
+
+.nav-search-dropdown .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.nav-search-dropdown .dropdown-item:hover {
+    background: #fbf9f5;
+}
+
+.nav-search-dropdown .dropdown-thumb {
+    width: 48px;
+    height: 60px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #e6e0d6;
+    flex-shrink: 0;
+}
+
+.nav-search-dropdown .dropdown-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #112c1b;
+    margin-bottom: 0.2rem;
+}
+
+.nav-search-dropdown .dropdown-price {
+    color: #112c1b;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
