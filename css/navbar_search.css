@@ -82,41 +82,48 @@
 
 .nav-search-overlay .search-input-icon {
     font-size: 1.25rem;
-    color: #112c1b;
+    color: #c59b5f;
     margin-right: 0.75rem;
     user-select: none;
+    flex-shrink: 0;
 }
 
 .nav-search-overlay .main-search-input {
-    flex: 1;
+    flex: 1 1 0%;
+    min-width: 0;
+    width: 0;
     background: transparent;
     border: none;
     outline: none;
-    color: #112c1b;
+    color: #ffffff !important;
+    caret-color: #c59b5f;
     font-size: 1.05rem;
     font-family: inherit;
     padding: 0.65rem 0;
 }
 
 .nav-search-overlay .main-search-input::placeholder {
-    color: #7a8a80;
+    color: rgba(255, 255, 255, 0.65) !important;
 }
 
 .nav-search-overlay .search-submit-btn {
     background: #112c1b;
     color: #ffffff;
-    border: none;
-    padding: 0.75rem 1.8rem;
+    border: 1px solid rgba(197, 155, 95, 0.4);
+    padding: 0.75rem 1.6rem;
     border-radius: 40px;
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
     letter-spacing: 0.04em;
-    transition: background 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+    transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
 }
 
 .nav-search-overlay .search-submit-btn:hover {
     background: #1b432a;
+    border-color: #c59b5f;
     transform: translateY(-1px);
 }
 
@@ -171,4 +178,69 @@
     color: #112c1b;
     font-size: 0.88rem;
     font-weight: 700;
+}
+
+/* Mobile Responsiveness for Search Modal */
+@media (max-width: 600px) {
+    .nav-search-overlay {
+        padding: 4.5rem 0.85rem 1.5rem !important;
+    }
+
+    .nav-search-box {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .nav-search-close {
+        top: 1.2rem !important;
+        right: 1.2rem !important;
+        font-size: 2.1rem !important;
+    }
+
+    .nav-search-overlay .search-input-wrap {
+        padding: 0.25rem 0.35rem 0.25rem 0.85rem !important;
+        border-radius: 40px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .nav-search-overlay .search-input-icon {
+        font-size: 1.05rem !important;
+        margin-right: 0.45rem !important;
+    }
+
+    .nav-search-overlay .main-search-input {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 0 !important;
+    }
+
+    .nav-search-overlay .search-submit-btn {
+        padding: 0.55rem 1rem !important;
+        font-size: 0.82rem !important;
+        border-radius: 25px !important;
+        letter-spacing: 0 !important;
+    }
+
+    .nav-search-dropdown {
+        max-height: 55vh !important;
+        border-radius: 10px !important;
+    }
+
+    .nav-search-dropdown .dropdown-item {
+        padding: 0.7rem 0.85rem !important;
+        gap: 0.75rem !important;
+    }
+
+    .nav-search-dropdown .dropdown-thumb {
+        width: 40px !important;
+        height: 50px !important;
+    }
+
+    .nav-search-dropdown .dropdown-title {
+        font-size: 0.88rem !important;
+    }
+
+    .nav-search-dropdown .dropdown-price {
+        font-size: 0.8rem !important;
+    }
 }

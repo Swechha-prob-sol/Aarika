@@ -23,7 +23,7 @@
                         type="text" 
                         id="aarika-nav-search-input" 
                         class="main-search-input" 
-                        placeholder="Search for tunics, tops, kurta sets, kurtis, dresses..." 
+                        placeholder="${window.innerWidth <= 600 ? 'Search styles...' : 'Search for tunics, tops, kurta sets, kurtis, dresses...'}" 
                         autocomplete="off"
                     />
                     <button class="search-submit-btn" id="aarika-nav-search-submit">Search</button>
@@ -129,7 +129,7 @@
 
     // Bind all search icons / buttons across the current page
     function initSearchButtons() {
-        const searchButtons = document.querySelectorAll(".search-icon-btn, .nav-icon-emoji, .mobile-nav-icon");
+        const searchButtons = document.querySelectorAll(".search-icon-btn, a[aria-label='Search'], a[title='Search']");
         searchButtons.forEach(btn => {
             // Update href to search.html as fallback, and intercept click for instant modal
             btn.setAttribute("href", searchPageUrl);
