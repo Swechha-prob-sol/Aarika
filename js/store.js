@@ -7,10 +7,14 @@
   'use strict';
 
   /* ── helpers ─────────────────────────────────────────── */
-  function getCart()     { return JSON.parse(localStorage.getItem('aarika_cart')     || '[]'); }
-  function getWishlist() { return JSON.parse(localStorage.getItem('aarika_wishlist') || '[]'); }
-  function saveCart(arr)     { localStorage.setItem('aarika_cart',     JSON.stringify(arr)); }
-  function saveWishlist(arr) { localStorage.setItem('aarika_wishlist', JSON.stringify(arr)); }
+  /* Use per-user keys if AarikaAuth is available, else fall back to guest keys */
+  function _cartKey()     { return (window.AarikaAuth && window.AarikaAuth.cartKey)     ? window.AarikaAuth.cartKey()     : 'aarika_cart_guest'; }
+  function _wishlistKey() { return (window.AarikaAuth && window.AarikaAuth.wishlistKey) ? window.AarikaAuth.wishlistKey() : 'aarika_wishlist_guest'; }
+
+  function getCart()     { try { return JSON.parse(localStorage.getItem(_cartKey())     || '[]'); } catch(e) { return []; } }
+  function getWishlist() { try { return JSON.parse(localStorage.getItem(_wishlistKey()) || '[]'); } catch(e) { return []; } }
+  function saveCart(arr)     { localStorage.setItem(_cartKey(),     JSON.stringify(arr)); }
+  function saveWishlist(arr) { localStorage.setItem(_wishlistKey(), JSON.stringify(arr)); }
 
   /* Build a product object from any .product-card element */
   function cardToProduct(card) {
