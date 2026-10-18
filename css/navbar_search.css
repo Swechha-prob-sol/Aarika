@@ -244,3 +244,37 @@
         font-size: 0.8rem !important;
     }
 }
+
+/* Global Aarika Toast Notification */
+.aarika-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #112c1b;
+    border: 1px solid #c59b5f;
+    color: #ffffff;
+    padding: 0.9rem 1.4rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    animation: toastSlideUp 0.3s ease;
+    pointer-events: none;
+}
+
+@keyframes toastSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
