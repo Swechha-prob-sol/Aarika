@@ -147,11 +147,143 @@
         });
     }
 
+    // Toast Notification System (Matches search.html)
+    let toastTimer = null;
+    function showToast(message) {
+        let toast = document.querySelector(".aarika-toast");
+        if (!toast) {
+            toast = document.createElement("div");
+            toast.className = "aarika-toast";
+            document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.style.opacity = "1";
+        toast.style.transform = "translateY(0)";
+
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+            if (toast) {
+                toast.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+                toast.style.opacity = "0";
+                toast.style.transform = "translateY(15px)";
+                setTimeout(() => {
+                    if (toast && toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 320);
+            }
+        }, 2600);
+    }
+    window.showToast = showToast;
+    window.showAarikaToast = showToast;
+    window.addToCart = function (title, size) {
+        showToast(`Added ${title || "Item"}${size ? " (Size: " + size + ")" : ""} to Cart! 🛒`);
+    };
+
+    // Global Product Card Interactions (Size Selection, Wishlist Heart Toggle, Wishlist Remove, Add to Cart Feedback)
+    function initCardInteractions() {
+        // Extract card metadata helper
+        function getCardInfo(element) {
+            const card = element.closest(".product-card") || element.closest(".cart-item") || element.parentElement;
+            if (!card) return { card: null, title: "Item", size: "M" };
+            const titleEl = card.querySelector(".card-title") || card.querySelector("h3") || card.querySelector(".product-title");
+            const title = titleEl ? titleEl.textContent.trim() : "Item";
+            const selectedPill = card.querySelector(".size-pill.selected") || card.querySelector(".size-pill");
+            const size = selectedPill ? selectedPill.textContent.trim() : "M";
+            return { card, title, size };
+        }
+
+        // Set default selected size for all cards on the page if not already selected
+        function applyDefaultSizes() {
+            if (window.location.pathname.includes("search.html")) return;
+            document.querySelectorAll(".card-sizes-row").forEach(row => {
+                if (!row.querySelector(".size-pill.selected")) {
+                    const firstPill = row.querySelector(".size-pill");
+                    if (firstPill) firstPill.classList.add("selected");
+                }
+            });
+        }
+        applyDefaultSizes();
+
+        // 1. Size pill click selection
+        document.addEventListener("click", (e) => {
+            const pill = e.target.closest(".size-pill");
+            if (pill) {
+                if (window.location.pathname.includes("search.html")) return;
+                const row = pill.closest(".card-sizes-row");
+                if (row) {
+                    row.querySelectorAll(".size-pill").forEach(p => p.classList.remove("selected"));
+                    pill.classList.add("selected");
+                }
+            }
+        });
+
+        // 2. Wishlist heart toggle click (♡ <-> ♥)
+        document.addEventListener("click", (e) => {
+            const heartBtn = e.target.closest(".wishlist-toggle-btn");
+            if (heartBtn) {
+                if (window.location.pathname.includes("search.html")) return;
+                e.preventDefault();
+                e.stopPropagation();
+                heartBtn.classList.toggle("active");
+                const info = getCardInfo(heartBtn);
+                if (heartBtn.classList.contains("active")) {
+                    heartBtn.textContent = "♥";
+                    showToast(`Added "${info.title}" to Wishlist ♡`);
+                } else {
+                    heartBtn.textContent = "♡";
+                    showToast("Removed from Wishlist");
+                }
+            }
+        });
+
+        // 3. Wishlist remove button click (for Wishlist page)
+        document.addEventListener("click", (e) => {
+            const removeBtn = e.target.closest(".wishlist-remove-btn");
+            if (removeBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                const info = getCardInfo(removeBtn);
+                const card = info.card;
+                if (card) {
+                    card.style.transition = "all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)";
+                    card.style.opacity = "0";
+                    card.style.transform = "scale(0.85)";
+                    setTimeout(() => {
+                        card.remove();
+                    }, 350);
+                }
+                showToast(`Removed "${info.title}" from Wishlist`);
+            }
+        });
+
+        // 4. Add to Cart button visual feedback + toast notification
+        document.addEventListener("click", (e) => {
+            const cartBtn = e.target.closest(".card-add-cart-btn");
+            if (cartBtn && !cartBtn.hasAttribute("disabled") && !cartBtn.classList.contains("added")) {
+                if (window.location.pathname.includes("search.html")) return;
+                const originalText = cartBtn.textContent;
+                cartBtn.classList.add("added");
+                cartBtn.textContent = "✓ Added to Cart";
+                
+                const info = getCardInfo(cartBtn);
+                showToast(`Added ${info.title} (Size: ${info.size}) to Cart! 🛒`);
+
+                setTimeout(() => {
+                    cartBtn.classList.remove("added");
+                    cartBtn.textContent = originalText;
+                }, 1600);
+            }
+        });
+    }
+
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", () => {
             initSearchButtons();
+            initCardInteractions();
         });
     } else {
         initSearchButtons();
+        initCardInteractions();
     }
 })();
