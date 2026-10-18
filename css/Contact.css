@@ -34,7 +34,7 @@ body {
     line-height: 1.5;
     overflow-x: hidden;
     padding-top: 132px;
-    padding-bottom: 84px;
+    padding-bottom: 0;
 }
 
 button,
@@ -401,7 +401,7 @@ a {
    BOTTOM NAVIGATION 
    ============================================================ */
 .bottom-nav {
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
@@ -413,6 +413,16 @@ a {
     border-top: 1px solid rgba(197, 155, 95, 0.15);
     padding: 0.8rem 0;
     z-index: 1200;
+}
+
+@media (max-width: 768px) {
+    .bottom-nav {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 84px;
+    }
 }
 
 .bottom-nav-item {

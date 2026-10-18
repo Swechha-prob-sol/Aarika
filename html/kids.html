@@ -13,6 +13,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
 <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/basic_style.css">
+    <link rel="stylesheet" href="../css/navbar_search.css">
 </head>
 
 <body>
@@ -45,7 +46,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -123,105 +124,124 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
     <div class="products">
 
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kidsproduct1.jpg" alt="Floral Dress">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidsproduct1.jpg" alt="Meadow Floral Dress" class="card-image">
             </div>
-            <h3>Meadow Floral Dress</h3>
-            <p class="price">₹1,499</p>
-
-            <div class="sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Meadow Floral Dress</h3>
+                <div class="card-price-row">
+                    <span class="card-price">₹1,499</span>
+                </div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kidsproduct2.jpg" alt="Printed T-Shirt">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidsproduct2.jpg" alt="Happy Days T-Shirt" class="card-image">
             </div>
-            <h3>Happy Days T-Shirt</h3>
-            <p class="price">₹899</p>
-
-            <div class="sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">T-Shirts</p>
+                <h3 class="card-title">Happy Days T-Shirt</h3>
+                <div class="card-price-row">
+                    <span class="card-price">₹899</span>
+                </div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kidsproduct3.jpg" alt="Co-ord Set">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidsproduct3.jpg" alt="Little Explorer Set" class="card-image">
             </div>
-            <h3>Little Explorer Set</h3>
-            <p class="price">₹1,299</p>
-
-            <div class="sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Co-ord Sets</p>
+                <h3 class="card-title">Little Explorer Set</h3>
+                <div class="card-price-row">
+                    <span class="card-price">₹1,299</span>
+                </div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kidsproduct4.jpg" alt="Cotton Kurta">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidsproduct4.jpg" alt="Little Prince Kurta" class="card-image">
             </div>
-            <h3>Little Prince Kurta</h3>
-            <p class="price">₹1,599</p>
-
-            <div class="sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Ethnic Wear</p>
+                <h3 class="card-title">Little Prince Kurta</h3>
+                <div class="card-price-row">
+                    <span class="card-price">₹1,599</span>
+                </div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kidsproduct5.jpg" alt="Cotton Pants">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidsproduct5.jpg" alt="Easy Cotton Pants" class="card-image">
             </div>
-            <h3>Easy Cotton Pants</h3>
-            <p class="price">₹999</p>
-
-            <div class="sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Bottoms</p>
+                <h3 class="card-title">Easy Cotton Pants</h3>
+                <div class="card-price-row">
+                    <span class="card-price">₹999</span>
+                </div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kidsproduct6.jpg" alt="Kids Jacket">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidsproduct6.jpg" alt="Little Adventure Jacket" class="card-image">
             </div>
-            <h3>Little Adventure Jacket</h3>
-            <p class="price">₹1,799</p>
-
-            <div class="sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Jackets</p>
+                <h3 class="card-title">Little Adventure Jacket</h3>
+                <div class="card-price-row">
+                    <span class="card-price">₹1,799</span>
+                </div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
     </div>
@@ -305,78 +325,94 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
     <div class="trending">
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/kidstrend1.jpg" alt="Green Dress">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidstrend1.jpg" alt="Garden Party Dress" class="card-image">
             </div>
-            <h3>Garden Party Dress</h3>
-            <p>₹1,399</p>
-            <div class="small-sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Garden Party Dress</h3>
+                <div class="card-price-row"><span class="card-price">₹1,399</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/kidstrend2.jpg" alt="T-Shirt">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidstrend2.jpg" alt="Mini Explorer Tee" class="card-image">
             </div>
-            <h3>Mini Explorer Tee</h3>
-            <p>₹799</p>
-            <div class="small-sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">T-Shirts</p>
+                <h3 class="card-title">Mini Explorer Tee</h3>
+                <div class="card-price-row"><span class="card-price">₹799</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/kidstrend3.jpg" alt="Printed Set">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidstrend3.jpg" alt="Sunny Day Co-ord" class="card-image">
             </div>
-            <h3>Sunny Day Co-ord</h3>
-            <p>₹1,199</p>
-            <div class="small-sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Co-ord Sets</p>
+                <h3 class="card-title">Sunny Day Co-ord</h3>
+                <div class="card-price-row"><span class="card-price">₹1,199</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/kidstrend4.jpg" alt="Festive Outfit">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidstrend4.jpg" alt="Festive Little Star" class="card-image">
             </div>
-            <h3>Festive Little Star</h3>
-            <p>₹1,699</p>
-            <div class="small-sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Ethnic Wear</p>
+                <h3 class="card-title">Festive Little Star</h3>
+                <div class="card-price-row"><span class="card-price">₹1,699</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/kidstrend5.jpg" alt="Casual Outfit">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kidstrend5.jpg" alt="Little Day-Out Set" class="card-image">
             </div>
-            <h3>Little Day-Out Set</h3>
-            <p>₹1,299</p>
-            <div class="small-sizes">
-                <span>2Y</span><span>4Y</span><span>6Y</span>
-                <span>8Y</span><span>10Y</span>
+            <div class="card-details">
+                <p class="card-category-tag">Co-ord Sets</p>
+                <h3 class="card-title">Little Day-Out Set</h3>
+                <div class="card-price-row"><span class="card-price">₹1,299</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
     </div>
@@ -499,6 +535,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -512,7 +552,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
             <span class="text">Cart</span>
         </a>
     </nav>
-</body>
-</html>
 
+    <!-- Global Product Search Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/navbar_search.js"></script>
+</body>
 </html>

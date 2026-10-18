@@ -6,6 +6,7 @@
     <title>New Arrivals - Aarika Premium Fashion Store</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/NewArrivals.css">
+    <link rel="stylesheet" href="../css/navbar_search.css">
 </head>
 <body>
     <!-- Top Banner -->
@@ -37,7 +38,7 @@
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -95,256 +96,232 @@
     <section class="arrivals-products">
         <div class="arrivals-grid">
             <!-- Product 1 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na1.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na1.jpg" alt="Pastel Bloom Maxi" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Pastel Bloom Maxi</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,599</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Dresses</p>
+                    <h3 class="card-title">Pastel Bloom Maxi</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,599</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #f4d0d5;"></span>
-                        <span class="color-swatch" style="background-color: #8da48a;"></span>
-                        <span class="color-swatch" style="background-color: #e5e5e5;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
+            </div>
 
             <!-- Product 2 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na2.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Best Seller</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na2.jpg" alt="Ivory Embroidered Kurta" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Ivory Embroidered Kurta</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,699</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Kurta Sets</p>
+                    <h3 class="card-title">Ivory Embroidered Kurta</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,699</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #d1b5a5;"></span>
-                        <span class="color-swatch" style="background-color: #7b594b;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 3 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
+            </div>
 
             <!-- Product 3 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na3.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Trending</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na3.jpg" alt="Sage Green Wrap Dress" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Sage Green Wrap Dress</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,499</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Dresses</p>
+                    <h3 class="card-title">Sage Green Wrap Dress</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,499</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #b0c4b1;"></span>
-                        <span class="color-swatch" style="background-color: #ffffff;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
+            </div>
 
             <!-- Product 4 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na4.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Popular</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na4.jpg" alt="Navy Belted Jumpsuit" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Navy Belted Jumpsuit</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,799</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Jumpsuits</p>
+                    <h3 class="card-title">Navy Belted Jumpsuit</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,799</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #2c3e50;"></span>
-                        <span class="color-swatch" style="background-color: #a49781;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 3 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 5 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na5.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na5.jpg" alt="Peach Ruffle Midi" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Peach Ruffle Midi</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,399</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Dresses</p>
+                    <h3 class="card-title">Peach Ruffle Midi</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,399</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #ffdab9;"></span>
-                        <span class="color-swatch" style="background-color: #555d4c;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 6 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na6.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Trending</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na6.jpg" alt="Beige Linen Pants" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Beige Linen Pants</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,299</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Bottoms</p>
+                    <h3 class="card-title">Beige Linen Pants</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #d2bba3;"></span>
-                        <span class="color-swatch" style="background-color: #88a786;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 7 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na7.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na7.jpg" alt="Lilac Tiered Dress" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Lilac Tiered Dress</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,499</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Dresses</p>
+                    <h3 class="card-title">Lilac Tiered Dress</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,499</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #c8a2c8;"></span>
-                        <span class="color-swatch" style="background-color: #f4d0d5;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 8 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na8.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Popular</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na8.jpg" alt="Mustard Printed Kurta" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Mustard Printed Kurta</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,299</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Ethnic Wear</p>
+                    <h3 class="card-title">Mustard Printed Kurta</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #e4a853;"></span>
-                        <span class="color-swatch" style="background-color: #8da48a;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 3 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 9 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na9.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na9.jpg" alt="Olive Shirt Dress" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Olive Shirt Dress</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,599</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Dresses</p>
+                    <h3 class="card-title">Olive Shirt Dress</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,599</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #808000;"></span>
-                        <span class="color-swatch" style="background-color: #d2bba3;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 10 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na10.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Best Seller</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na10.jpg" alt="Black Co-ord Set" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Black Co-ord Set</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,899</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Co-ord Sets</p>
+                    <h3 class="card-title">Black Co-ord Set</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,899</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="color-swatch" style="background-color: #4a4a4a;"></span>
-                        <span class="color-swatch" style="background-color: #7b594b;"></span>
-                        <span class="more-colors">+ 3 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 11 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na11.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Trending</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na11.jpg" alt="Floral A-Line Dress" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Floral A-Line Dress</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,399</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Dresses</p>
+                    <h3 class="card-title">Floral A-Line Dress</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,399</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #f4d0d5;"></span>
-                        <span class="color-swatch" style="background-color: #a49781;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
-            
+            </div>
+
             <!-- Product 12 -->
-            <article class="product-card">
-                <div class="product-image-container">
-                    <div class="new-badge">NEW</div>
-                    <button class="wishlist-btn">♡</button>
-                    <img src="../photos/na12.jpg" alt="Newarrivals Product" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="../photos/na12.jpg" alt="Mint Sleeveless Blazer" class="card-image">
                 </div>
-                <div class="product-details">
-                    <h3>Mint Sleeveless Blazer</h3>
-                    <div class="price-container">
-                        <span class="price">₹1,299</span>
+                <div class="card-details">
+                    <p class="card-category-tag">Blazers</p>
+                    <h3 class="card-title">Mint Sleeveless Blazer</h3>
+                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
                     </div>
-                    <div class="color-options">
-                        <span class="color-swatch" style="background-color: #98ff98;"></span>
-                        <span class="color-swatch" style="background-color: #ffffff;"></span>
-                        <span class="color-swatch" style="background-color: #1a1a1a;"></span>
-                        <span class="more-colors">+ 2 more</span>
-                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
                 </div>
-            </article>
+            </div>
         </div>
 
 
@@ -418,6 +395,10 @@
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -431,5 +412,9 @@
             <span class="text">Cart</span>
         </a>
     </nav>
+
+    <!-- Global Product Search Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/navbar_search.js"></script>
 </body>
 </html>

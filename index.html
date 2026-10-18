@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aarika - Premium Fashion Store</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/navbar_search.css">
 </head>
 
 <body>
@@ -38,7 +39,7 @@
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="html/search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="html/Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -49,7 +50,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home" style="background-image: url('photos/img1.png');>
+    <section class="hero" id="home" style="background-image: url('photos/img1.png');">
         <div class="hero-content">
             <p class="hero-label">NEW COLLECTION 2026</p>
             <h1>Luxury Fashion for Every Occasion</h1>
@@ -105,67 +106,93 @@
         </header>
 
         <div class="products-grid">
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/trending_women.jpg" alt="Green embroidered ethnic dress">
-                    <span class="product-tag">New</span>
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Women</p>
-                    <h3>Embroidered Ethnic Dress</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;2,998</span>
-                        <span class="price-old">&#8377;4,999</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/trending_women.jpg" alt="Embroidered Ethnic Dress" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Women</p>
+                    <h3 class="card-title">Embroidered Ethnic Dress</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹2,998</span>
+                        <span class="card-original-price">₹4,999</span>
+                        <span class="card-discount">40% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
 
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/Trending_men.jpg" alt="Beige linen casual shirt for men">
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Men</p>
-                    <h3>Linen Casual Shirt</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;1,799</span>
-                        <span class="price-old">&#8377;2,999</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Trending</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/Trending_men.jpg" alt="Linen Casual Shirt" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Men</p>
+                    <h3 class="card-title">Linen Casual Shirt</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹1,799</span>
+                        <span class="card-original-price">₹2,999</span>
+                        <span class="card-discount">40% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
 
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/trending_floral.jpg" alt="Cream floral print kurta set">
-                    <span class="product-tag">New</span>
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Women</p>
-                    <h3>Floral Print Kurta Set</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;2,499</span>
-                        <span class="price-old">&#8377;3,899</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Popular</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/trending_floral.jpg" alt="Floral Print Kurta Set" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Women</p>
+                    <h3 class="card-title">Floral Print Kurta Set</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹2,499</span>
+                        <span class="card-original-price">₹3,899</span>
+                        <span class="card-discount">35% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
 
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/trending_kids.jpg" alt="Kids cotton t-shirt in olive green">
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Kids</p>
-                    <h3>Cotton Printed T-Shirt</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;699</span>
-                        <span class="price-old">&#8377;1,199</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Trending</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/trending_kids.jpg" alt="Cotton Printed T-Shirt" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Kids</p>
+                    <h3 class="card-title">Cotton Printed T-Shirt</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹699</span>
+                        <span class="card-original-price">₹1,199</span>
+                        <span class="card-discount">40% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -187,66 +214,93 @@
         </header>
 
         <div class="products-grid">
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/featured_floral.jpeg" alt="Elegant beige floral dress">
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Women</p>
-                    <h3>Elegant Floral Dress</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;2,799</span>
-                        <span class="price-old">&#8377;4,599</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Best Seller</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/featured_floral.jpeg" alt="Elegant Floral Dress" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Women</p>
+                    <h3 class="card-title">Elegant Floral Dress</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹2,799</span>
+                        <span class="card-original-price">₹4,599</span>
+                        <span class="card-discount">40% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
 
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/featured_shirt.jpeg" alt="Black slim fit formal shirt">
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Men</p>
-                    <h3>Slim Fit Formal Shirt</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;1,999</span>
-                        <span class="price-old">&#8377;2,999</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Popular</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/featured_shirt.jpeg" alt="Slim Fit Formal Shirt" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Men</p>
+                    <h3 class="card-title">Slim Fit Formal Shirt</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹1,999</span>
+                        <span class="card-original-price">₹2,999</span>
+                        <span class="card-discount">33% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
 
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/feature_sweater.jpeg" alt="Cream knitted winter sweater">
-                    <span class="product-tag">Best Seller</span>
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Women</p>
-                    <h3>Knitted Winter Sweater</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;1,899</span>
-                        <span class="price-old">&#8377;2,799</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">Best Seller</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/feature_sweater.jpeg" alt="Knitted Winter Sweater" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Women</p>
+                    <h3 class="card-title">Knitted Winter Sweater</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹1,899</span>
+                        <span class="card-original-price">₹2,799</span>
+                        <span class="card-discount">30% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
 
-            <article class="product-card">
-                <figure class="product-media">
-                    <img src="./photos/Hooded_Sweatshirt_kids.webp" alt="Kids hooded sweatshirt in mustard">
-                </figure>
-                <div class="product-info">
-                    <p class="product-category">Kids</p>
-                    <h3>Hooded Sweatshirt</h3>
-                    <p class="product-price">
-                        <span class="price">&#8377;1,299</span>
-                        <span class="price-old">&#8377;1,999</span>
-                    </p>
+            <div class="product-card">
+                <div class="card-image-box">
+                    <span class="card-badge">New</span>
+                    <button class="wishlist-toggle-btn">♡</button>
+                    <img src="./photos/Hooded_Sweatshirt_kids.webp" alt="Hooded Sweatshirt" class="card-image">
                 </div>
-                <button type="button" class="add-btn">Add to Cart</button>
-            </article>
+                <div class="card-details">
+                    <p class="card-category-tag">Kids</p>
+                    <h3 class="card-title">Hooded Sweatshirt</h3>
+                    <div class="card-price-row">
+                        <span class="card-price">₹1,299</span>
+                        <span class="card-original-price">₹1,999</span>
+                        <span class="card-discount">35% OFF</span>
+                    </div>
+                    <p class="card-sizes-label">Select Size:</p>
+                    <div class="card-sizes-row">
+                        <span class="size-pill selected">2Y</span><span class="size-pill">4Y</span><span class="size-pill">6Y</span><span class="size-pill">8Y</span><span class="size-pill">10Y</span>
+                    </div>
+                    <button class="card-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -395,6 +449,10 @@
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="html/search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -408,6 +466,10 @@
             <span class="text">Cart</span>
         </a>
     </nav>
+
+    <!-- Global Product Search Scripts -->
+    <script src="js/products.js"></script>
+    <script src="js/navbar_search.js"></script>
 </body>
 
 </html>

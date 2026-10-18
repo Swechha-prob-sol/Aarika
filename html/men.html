@@ -13,6 +13,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
 <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/basic_style.css">
+    <link rel="stylesheet" href="../css/navbar_search.css">
 </head>
 
 <body>
@@ -45,7 +46,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -120,103 +121,112 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
     <h2 class="section-title">BEST SELLERS</h2>
     <div class="products">
 
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/menproduct1.jpg" alt="Linen Shirt">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/menproduct1.jpg" alt="Linen Shirt" class="card-image">
             </div>
-            <h3>Linen Shirt</h3>
-            <p class="price">₹2,299</p>
-
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Shirts</p>
+                <h3 class="card-title">Linen Shirt</h3>
+                <div class="card-price-row"><span class="card-price">₹2,299</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/menproduct2.jpg" alt="Textured Polo">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/menproduct2.jpg" alt="Textured Polo" class="card-image">
             </div>
-            <h3>Textured Polo</h3>
-            <p class="price">₹1,799</p>
-
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">T-Shirts</p>
+                <h3 class="card-title">Textured Polo</h3>
+                <div class="card-price-row"><span class="card-price">₹1,799</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/menproduct3.jpg" alt="Cotton Kurta Set">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/menproduct3.jpg" alt="Cotton Kurta Set" class="card-image">
             </div>
-            <h3>Cotton Kurta Set</h3>
-            <p class="price">₹2,499</p>
-
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Kurta Sets</p>
+                <h3 class="card-title">Cotton Kurta Set</h3>
+                <div class="card-price-row"><span class="card-price">₹2,499</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/menproduct4.jpg" alt="Slim Fit Chinos">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/menproduct4.jpg" alt="Slim Fit Chinos" class="card-image">
             </div>
-            <h3>Slim Fit Chinos</h3>
-            <p class="price">₹1,899</p>
-
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Bottoms</p>
+                <h3 class="card-title">Slim Fit Chinos</h3>
+                <div class="card-price-row"><span class="card-price">₹1,899</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/menproduct5.jpg" alt="Linen Shirt">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/menproduct5.jpg" alt="Classic Linen Shirt" class="card-image">
             </div>
-            <h3>Classic Linen Shirt</h3>
-            <p class="price">₹2,299</p>
-
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Shirts</p>
+                <h3 class="card-title">Classic Linen Shirt</h3>
+                <div class="card-price-row"><span class="card-price">₹2,299</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/menproduct6.jpg" alt="Utility Jacket">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/menproduct6.jpg" alt="Utility Jacket" class="card-image">
             </div>
-            <h3>Utility Jacket</h3>
-            <p class="price">₹2,999</p>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Jackets</p>
+                <h3 class="card-title">Utility Jacket</h3>
+                <div class="card-price-row"><span class="card-price">₹2,999</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button class="wish-btn">ADD TO CART</button>
         </div>
     </div>
 </section>
@@ -292,78 +302,94 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
     <div class="trending">
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/mentrend1.jpg" alt="Olive Shirt">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/mentrend1.jpg" alt="Olive Casual Shirt" class="card-image">
             </div>
-            <h3>Olive Casual Shirt</h3>
-            <p>₹2,199</p>
-            <div class="small-sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Shirts</p>
+                <h3 class="card-title">Olive Casual Shirt</h3>
+                <div class="card-price-row"><span class="card-price">₹2,199</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/mentrend2.jpg" alt="Beige T-Shirt">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/mentrend2.jpg" alt="Classic Beige Tee" class="card-image">
             </div>
-            <h3>Classic Beige Tee</h3>
-            <p>₹1,499</p>
-            <div class="small-sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">T-Shirts</p>
+                <h3 class="card-title">Classic Beige Tee</h3>
+                <div class="card-price-row"><span class="card-price">₹1,499</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/mentrend3.jpg" alt="Striped Shirt">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/mentrend3.jpg" alt="Natural Stripe Shirt" class="card-image">
             </div>
-            <h3>Natural Stripe Shirt</h3>
-            <p>₹2,399</p>
-            <div class="small-sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Shirts</p>
+                <h3 class="card-title">Natural Stripe Shirt</h3>
+                <div class="card-price-row"><span class="card-price">₹2,399</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/mentrend4.jpg" alt="Green Shirt">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/mentrend4.jpg" alt="Forest Green Shirt" class="card-image">
             </div>
-            <h3>Forest Green Shirt</h3>
-            <p>₹2,199</p>
-            <div class="small-sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Shirts</p>
+                <h3 class="card-title">Forest Green Shirt</h3>
+                <div class="card-price-row"><span class="card-price">₹2,199</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
-
-        <div class="trend-card">
-            <div>
-                <img src="../photos/mentrend5.jpg" alt="White Kurta">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/mentrend5.jpg" alt="Ivory Cotton Kurta" class="card-image">
             </div>
-            <h3>Ivory Cotton Kurta</h3>
-            <p>₹2,299</p>
-            <div class="small-sizes">
-                <span>S</span><span>M</span><span>L</span>
-                <span>XL</span><span>XXL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Kurta Sets</p>
+                <h3 class="card-title">Ivory Cotton Kurta</h3>
+                <div class="card-price-row"><span class="card-price">₹2,299</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span><span class="size-pill">XXL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART</button>
         </div>
 
     </div>
@@ -491,6 +517,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -504,7 +534,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
             <span class="text">Cart</span>
         </a>
     </nav>
-</body>
-</html>
 
+    <!-- Global Product Search Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/navbar_search.js"></script>
+</body>
 </html>

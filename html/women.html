@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/basic_style.css">
+    <link rel="stylesheet" href="../css/navbar_search.css">
     <link
 href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -44,7 +45,7 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             </div>
 
             <div class="nav-icons">
-                <a href="#" class="icon-link search-icon-btn">🔍</a>
+                <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
                 <a href="Wishlist.html" class="icon-link">♡</a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
@@ -74,35 +75,35 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
 
     <div class="categories">
 
-        <div class="category">
-            <img src="../photos/dresses1.webp">
+        <a href="search.html?q=dresses" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/dresses1.webp" alt="Dresses">
             <h4>DRESSES</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/kurta_set.jpg">
+        <a href="search.html?q=kurta%20sets" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/kurta_set.jpg" alt="Kurta Sets">
             <h4>KURTA SETS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/tunics.jpg">
+        <a href="search.html?q=tunics" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/tunics.jpg" alt="Tunics">
             <h4>TUNICS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/tops.jpg">
+        <a href="search.html?q=tops" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/tops.jpg" alt="Tops">
             <h4>TOPS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/kurtis.jpg">
+        <a href="search.html?q=kurtis" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/kurtis.jpg" alt="Kurtis">
             <h4>KURTIS</h4>
-        </div>
+        </a>
 
-        <div class="category">
-            <img src="../photos/sarees.jpg">
+        <a href="search.html?q=sarees" class="category" style="text-decoration:none; color:inherit;">
+            <img src="../photos/sarees.jpg" alt="Sarees">
             <h4>SAREES</h4>
-        </div>
+        </a>
 
     </div>
 </section>
@@ -114,105 +115,112 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
 
     <div class="products">
 
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/product1.jpg">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/product1.jpg" alt="Meadow Maxi Dress" class="card-image">
             </div>
-            <h3>Meadow Maxi Dress</h3>
-            <p class="price">₹2,799</p>
-
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Meadow Maxi Dress</h3>
+                <div class="card-price-row"><span class="card-price">₹2,799</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART ♡</button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/kurtis.jpg">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/kurtis.jpg" alt="Ivy Kurta Set" class="card-image">
             </div>
-            <h3>Ivy Kurta Set</h3>
-            <p class="price">₹2,399</p>
-
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Kurta Sets</p>
+                <h3 class="card-title">Ivy Kurta Set</h3>
+                <div class="card-price-row"><span class="card-price">₹2,399</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART </button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/product3.png">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/product3.png" alt="Sage Tier Dress" class="card-image">
             </div>
-            <h3>Sage Tier Dress</h3>
-            <p class="price">₹2,599</p>
-
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Sage Tier Dress</h3>
+                <div class="card-price-row"><span class="card-price">₹2,599</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART </button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/product4.jpg">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/product4.jpg" alt="Leaf Print Top" class="card-image">
             </div>
-            <h3>Leaf Print Top</h3>
-            <p class="price">₹1,799</p>
-
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Tops</p>
+                <h3 class="card-title">Leaf Print Top</h3>
+                <div class="card-price-row"><span class="card-price">₹1,799</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART </button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/product5.jpg">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/product5.jpg" alt="Olive Green Kurti" class="card-image">
             </div>
-            <h3>Olive Green Kurti</h3>
-            <p class="price">₹1,999</p>
-
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Tops</p>
+                <h3 class="card-title">Olive Green Kurti</h3>
+                <div class="card-price-row"><span class="card-price">₹1,999</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART </button>
         </div>
 
-
-        <div class="product">
-            <div class="product-img">
-                <img src="../photos/product6.jpg">
-                <button class="wishlist">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/product6.jpg" alt="Bloom Floral Dress" class="card-image">
             </div>
-            <h3>Bloom Floral Dress</h3>
-            <p class="price">₹2,699</p>
-
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Bloom Floral Dress</h3>
+                <div class="card-price-row"><span class="card-price">₹2,699</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-
-            <button class="wish-btn">ADD TO CART </button>
         </div>
 
     </div>
@@ -278,74 +286,94 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
 
     <div class="trending">
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/trend1.jpg">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/trend1.jpg" alt="Floral Aariaki" class="card-image">
             </div>
-            <h3>Floral Aariaki</h3>
-            <p>₹2,899</p>
-            <div class="small-sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Floral Aariaki</h3>
+                <div class="card-price-row"><span class="card-price">₹2,899</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART </button>
         </div>
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/trend2.jpg">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Best Seller</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/trend2.jpg" alt="Embroidered Kurta" class="card-image">
             </div>
-            <h3>Embroidered Kurta</h3>
-            <p>₹2,199</p>
-            <div class="small-sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Kurta Sets</p>
+                <h3 class="card-title">Embroidered Kurta</h3>
+                <div class="card-price-row"><span class="card-price">₹2,199</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART </button>
         </div>
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/trend3.jpg">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">New</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/trend3.jpg" alt="Pastel Printed Set" class="card-image">
             </div>
-            <h3>Pastel Printed Set</h3>
-            <p>₹2,499</p>
-            <div class="small-sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Co-ord Sets</p>
+                <h3 class="card-title">Pastel Printed Set</h3>
+                <div class="card-price-row"><span class="card-price">₹2,499</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART </button>
         </div>
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/trend4.jpg">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Popular</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/trend4.jpg" alt="Green Printed Dress" class="card-image">
             </div>
-            <h3>Green Printed Dress</h3>
-            <p>₹2,299</p>
-            <div class="small-sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Dresses</p>
+                <h3 class="card-title">Green Printed Dress</h3>
+                <div class="card-price-row"><span class="card-price">₹2,299</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART </button>
         </div>
 
-        <div class="trend-card">
-            <div>
-                <img src="../photos/trend5.jpg">
-                <button class="trend-heart">♡</button>
+        <div class="product-card">
+            <div class="card-image-box">
+                <span class="card-badge">Trending</span>
+                <button class="wishlist-toggle-btn">♡</button>
+                <img src="../photos/trend5.jpg" alt="Cotton Floral Kurti" class="card-image">
             </div>
-            <h3>Cotton Floral Kurti</h3>
-            <p>₹1,699</p>
-            <div class="small-sizes">
-                <span>XS</span><span>S</span><span>M</span>
-                <span>L</span><span>XL</span>
+            <div class="card-details">
+                <p class="card-category-tag">Tops</p>
+                <h3 class="card-title">Cotton Floral Kurti</h3>
+                <div class="card-price-row"><span class="card-price">₹1,699</span></div>
+                <p class="card-sizes-label">Select Size:</p>
+                <div class="card-sizes-row">
+                    <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
+                </div>
+                <button class="card-add-cart-btn">Add to Cart</button>
             </div>
-            <button>ADD TO CART </button>
         </div>
 
     </div>
@@ -468,6 +496,10 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
+        <a href="search.html" class="bottom-nav-item">
+            <span class="icon">🔍</span>
+            <span class="text">Search</span>
+        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -481,7 +513,9 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;6
             <span class="text">Cart</span>
         </a>
     </nav>
-</body>
-</html>
 
+    <!-- Global Product Search Scripts -->
+    <script src="../js/products.js"></script>
+    <script src="../js/navbar_search.js"></script>
+</body>
 </html>
