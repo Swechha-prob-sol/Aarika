@@ -63,7 +63,7 @@
   var homeUrl   = isInHtmlFolder ? '../index.html' : 'index.html';
 
   /* ── Page Gate ────────────────────────────────────────────── */
-  var PROTECTED_PAGES = ['wishlist.html', 'cart.html', 'myaccount.html'];
+  var PROTECTED_PAGES = ['wishlist.html', 'cart.html', 'myaccount.html', 'payment.html'];
   var isCurrentModalGate = false;
 
   function runPageGate() {
@@ -176,7 +176,7 @@
 
       if (anchor) {
         var href = (anchor.getAttribute('href') || '').toLowerCase();
-        if (href && (href.indexOf('cart.html') !== -1 || href.indexOf('wishlist.html') !== -1 || href.indexOf('myaccount.html') !== -1)) {
+        if (href && (href.indexOf('cart.html') !== -1 || href.indexOf('wishlist.html') !== -1 || href.indexOf('myaccount.html') !== -1 || href.indexOf('payment.html') !== -1)) {
           isProtectedLink = true;
         }
       }
@@ -215,13 +215,14 @@
     var email    = ((document.getElementById('signup-email')    || {}).value || '').trim().toLowerCase();
     var password = ((document.getElementById('signup-password') || {}).value || '');
     var address  = ((document.getElementById('signup-address')  || {}).value || '').trim();
-    var phone    = ((document.getElementById('signup-phone')    || {}).value || '').trim();
+    var phone    = ((document.getElementById('signup-phone')    || {}).value || '').trim().replace(/\D/g, '');
 
     if (!username)                        return showError('Please enter a username.');
     if (!email || email.indexOf('@') < 0) return showError('Please enter a valid email address.');
     if (!password || password.length < 6) return showError('Password must be at least 6 characters.');
     if (!address)                         return showError('Please enter your address.');
     if (!phone)                           return showError('Please enter your phone number.');
+    if (phone.length !== 10)              return showError('Phone number must be exactly 10 digits.');
 
     var users = getUsers();
     if (users.find(function (u) { return u.email === email; })) {
@@ -394,9 +395,10 @@
         } else {
           var fieldKey = { 'edit-username':'username', 'edit-age':'age', 'edit-phone':'phone', 'edit-address':'address' }[action];
           var curVal   = (u[fieldKey] || '');
-          var inputType = (action === 'edit-age') ? 'number' : 'text';
+          var inputType = (action === 'edit-age') ? 'number' : (action === 'edit-phone' ? 'tel' : 'text');
+          var inputExtra = (action === 'edit-phone') ? ' inputmode="numeric" maxlength="10" placeholder="10-digit mobile number"' : '';
 
-          wrap.innerHTML = '<input type="' + inputType + '" value="' + escHtml(curVal) + '" style="' + editInputStyle() + '">'
+          wrap.innerHTML = '<input type="' + inputType + '" value="' + escHtml(curVal) + '"' + inputExtra + ' style="' + editInputStyle() + '">'
             + '<div style="display:flex;gap:0.5rem;margin-top:0.2rem;">'
             + '<button class="fld-save" style="' + saveBtnStyle() + '">Save</button>'
             + '<button class="fld-cancel" style="' + cancelBtnStyle() + '">Cancel</button>'
@@ -409,9 +411,22 @@
           inp.focus();
           inp.select();
 
+          if (action === 'edit-phone') {
+            inp.addEventListener('input', function (e) {
+              e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+            });
+          }
+
           wrap.querySelector('.fld-save').addEventListener('click', function () {
             var val = inp.value.trim();
             if (action === 'edit-username' && !val) return;
+            if (action === 'edit-phone') {
+              val = val.replace(/\D/g, '');
+              if (val.length !== 10) {
+                showAccountToast('Phone number must be exactly 10 digits');
+                return;
+              }
+            }
             updateUserField(fieldKey, val);
             closeEditor(valueEl, wrap, actions);
             renderAccountFields();
@@ -499,6 +514,13 @@
 
     var loginForm = document.getElementById('login-form');
     if (loginForm) loginForm.addEventListener('submit', handleLogIn);
+
+    var signupPhoneInput = document.getElementById('signup-phone');
+    if (signupPhoneInput) {
+      signupPhoneInput.addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
+      });
+    }
 
     bindPasswordToggles();
 

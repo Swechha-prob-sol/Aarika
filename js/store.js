@@ -307,6 +307,12 @@
   }
 
   /* ── REMOVE FUNCTIONS (called from inline onclick) ──── */
+  function clearCart() {
+    saveCart([]);
+    updateCartBadge();
+    if (isCartPage()) renderDynamicCart();
+  }
+
   function removeFromCart(idx) {
     var cart = getCart();
     cart.splice(idx, 1);
@@ -376,7 +382,17 @@
   };
 
   window.buyNow = window.buyNow || function (name) {
-    showToast('Proceeding to checkout…', '#112c1b');
+    var cart = getCart();
+    if (cart.length === 0) {
+      showToast('Your cart is empty!', '#8b6c3b');
+      return;
+    }
+    if (window.AarikaAuth && !window.AarikaAuth.isLoggedIn()) {
+      window.AarikaAuth.showLoginModal(false);
+      return;
+    }
+    sessionStorage.setItem('aarika_checkout_allowed', 'true');
+    window.location.href = 'payment.html';
   };
 
   window.buyAll = window.buyAll || function () {
@@ -385,7 +401,12 @@
       showToast('Your cart is empty!', '#8b6c3b');
       return;
     }
-    showToast('Proceeding to checkout with ' + cart.length + ' item(s)…', '#112c1b');
+    if (window.AarikaAuth && !window.AarikaAuth.isLoggedIn()) {
+      window.AarikaAuth.showLoginModal(false);
+      return;
+    }
+    sessionStorage.setItem('aarika_checkout_allowed', 'true');
+    window.location.href = 'payment.html';
   };
 
   window.applyCoupon = window.applyCoupon || function () {
@@ -407,6 +428,7 @@
     removeFromWishlist:    removeFromWishlist,
     changeCartQty:         changeCartQty,
     addWishlistItemToCart: addWishlistItemToCart,
+    clearCart:             clearCart,
   };
 
   /* ── INIT ────────────────────────────────────────────── */
