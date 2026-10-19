@@ -412,10 +412,15 @@ body{
   border-bottom: 1px solid rgba(156, 143, 110, 0.28);
 
   color: inherit;
+  cursor: pointer;
 
   transition:
     background-color .2s ease,
     color .2s ease;
+}
+
+.link-row *{
+  pointer-events: none;
 }
 
 

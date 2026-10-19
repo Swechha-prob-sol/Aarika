@@ -151,8 +151,11 @@
               id="signup-phone"
               name="phone"
               required
-              placeholder="Enter your phone number"
+              placeholder="Enter 10-digit phone number"
               autocomplete="tel"
+              inputmode="numeric"
+              maxlength="10"
+              pattern="[0-9]{10}"
             >
           </div>
         </div>
