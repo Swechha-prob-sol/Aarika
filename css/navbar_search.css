@@ -278,3 +278,22 @@
     }
 }
 
+/* Cart Count Badge */
+.cart-count-badge {
+    position: relative;
+    top: -8px;
+    left: -4px;
+    background: #c59b5f;
+    color: #112c1b;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0 3px;
+    display: inline-block;
+    vertical-align: top;
+}
+

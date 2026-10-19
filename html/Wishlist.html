@@ -39,7 +39,8 @@
 
             <div class="nav-icons">
                 <a href="search.html" class="icon-link search-icon-btn" title="Search">🔍</a>
-                <a href="Wishlist.html" class="icon-link">♡</a>
+                <a href="Wishlist.html" class="icon-link" title="Wishlist">♡</a>
+                <a href="cart.html" class="icon-link" title="Cart">🛒<span class="cart-count-badge" style="display:none">0</span></a>
                 <div class="account-container">
                     <span class="account-label">My Account</span>
                     <a href="MyAccount.html" class="icon-link account-icon-btn">👤</a>
@@ -60,7 +61,7 @@
 
     <!-- Section Header -->
     <div class="section-header">
-        <p class="section-subtitle">10 ITEMS SAVED</p>
+        <p class="section-subtitle" id="wl-count">0 ITEMS SAVED</p>
         <div class="separator">
             <span></span>
             <div class="diamond"></div>
@@ -68,206 +69,9 @@
         </div>
     </div>
 
-    <!-- Product Grid -->
+    <!-- Product Grid - fully dynamic via store.js -->
     <section class="wishlist-products">
-        <div class="wishlist-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Popular</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist1.jpg" alt="Pastel Bloom Maxi" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Dresses</p>
-                    <h3 class="card-title">Pastel Bloom Maxi</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,599</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">50% OFF</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist2.jpg" alt="Embroidered Kurta Set" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Kurta Sets</p>
-                    <h3 class="card-title">Embroidered Kurta Set</h3>
-                    <div class="card-price-row">
-                        <span class="card-price">₹1,499</span>
-                        <span class="card-original-price">₹2,999</span>
-                        <span class="card-discount">50% OFF</span>
-                    </div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Trending</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist3.jpg" alt="Beige Linen Pants" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Bottoms</p>
-                    <h3 class="card-title">Beige Linen Pants</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Popular</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist4.jpg" alt="Mint Sleeveless Blazer" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Blazers</p>
-                    <h3 class="card-title">Mint Sleeveless Blazer</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn out-of-stock-btn" disabled style="background:#8a8a8a; cursor:not-allowed;">Out of Stock</button>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">New</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist5.jpg" alt="Floral Summer Dress" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Dresses</p>
-                    <h3 class="card-title">Floral Summer Dress</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,499</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Best Seller</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist6.jpg" alt="Embroidered Kurta Set" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Kurta Sets</p>
-                    <h3 class="card-title">Embroidered Kurta Set</h3>
-                    <div class="card-price-row">
-                        <span class="card-price">₹1,599</span>
-                        <span class="card-original-price">₹2,999</span>
-                        <span class="card-discount">45% OFF</span>
-                    </div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 7 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Trending</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist7.jpg" alt="Beige Linen Pants" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Bottoms</p>
-                    <h3 class="card-title">Beige Linen Pants</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 8 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Popular</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist8.jpg" alt="Mint Sleeveless Blazer" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Blazers</p>
-                    <h3 class="card-title">Mint Sleeveless Blazer</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,399</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn out-of-stock-btn" disabled style="background:#8a8a8a; cursor:not-allowed;">Out of Stock</button>
-                </div>
-            </div>
-
-            <!-- Product 9 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">New</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist9.jpg" alt="Pastel Ruffle Dress" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Dresses</p>
-                    <h3 class="card-title">Pastel Ruffle Dress</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,449</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
-
-            <!-- Product 10 -->
-            <div class="product-card">
-                <div class="card-image-box">
-                    <span class="card-badge">Best Seller</span>
-                    <button class="wishlist-remove-btn" title="Remove from Wishlist">✕</button>
-                    <img src="../photos/wishlist10.jpg" alt="Mustard Printed Kurta" class="card-image">
-                </div>
-                <div class="card-details">
-                    <p class="card-category-tag">Ethnic Wear</p>
-                    <h3 class="card-title">Mustard Printed Kurta</h3>
-                    <div class="card-price-row"><span class="card-price">₹1,299</span></div>
-                    <p class="card-sizes-label">Select Size:</p>
-                    <div class="card-sizes-row">
-                        <span class="size-pill">XS</span><span class="size-pill">S</span><span class="size-pill">M</span><span class="size-pill">L</span><span class="size-pill">XL</span>
-                    </div>
-                    <button class="card-add-cart-btn">Add to Cart</button>
-                </div>
-            </div>
+        <div class="wishlist-grid" id="wishlist-grid">
         </div>
     </section>
 
@@ -339,10 +143,6 @@
             <span class="icon">🏠</span>
             <span class="text">Home</span>
         </a>
-        <a href="search.html" class="bottom-nav-item">
-            <span class="icon">🔍</span>
-            <span class="text">Search</span>
-        </a>
         <a href="../html/MyAccount.html" class="bottom-nav-item">
             <span class="icon">👤</span>
             <span class="text">You</span>
@@ -359,6 +159,8 @@
 
     <!-- Global Product Search Scripts -->
     <script src="../js/products.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/store.js"></script>
     <script src="../js/navbar_search.js"></script>
 </body>
 </html>
