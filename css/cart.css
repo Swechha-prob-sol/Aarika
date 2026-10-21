@@ -95,7 +95,7 @@ ul{
 
         .cart-item {
             display: grid;
-            grid-template-columns: 25px 110px minmax(0, 1fr) auto;
+            grid-template-columns: 110px minmax(0, 1fr) auto;
             gap: 17px;
             align-items: center;
             padding: 20px 22px;
@@ -462,7 +462,7 @@ ul{
             }
 
             .cart-item {
-                grid-template-columns: 20px 85px 1fr;
+                grid-template-columns: 85px 1fr;
                 gap: 11px;
             }
 
@@ -472,7 +472,7 @@ ul{
             }
 
             .item-price-area {
-                grid-column: 3;
+                grid-column: 2;
                 text-align: left;
             }
 
@@ -500,7 +500,7 @@ ul{
             }
 
             .cart-item {
-                grid-template-columns: 20px 75px 1fr;
+                grid-template-columns: 75px 1fr;
                 padding: 15px 12px;
             }
 
