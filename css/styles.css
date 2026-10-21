@@ -233,9 +233,8 @@ body {
                     padding 0.35s ease;
     }
 
-    .menu-icon:hover .nav-menu,
-    .nav-menu:hover {
-        max-height: calc(100vh - 80px);
+    .menu-icon.open .nav-menu {
+        max-height: 55vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         opacity: 1;

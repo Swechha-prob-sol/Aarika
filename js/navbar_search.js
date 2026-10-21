@@ -277,13 +277,45 @@
         });
     }
 
+    function initHamburgerToggle() {
+        const menuIcon = document.querySelector('.menu-icon');
+        if (!menuIcon) return;
+
+        // Toggle open class on click (mobile only)
+        menuIcon.addEventListener('click', function (e) {
+            if (window.innerWidth > 767) return;
+            // If click was on a nav link, let it navigate but also close
+            if (e.target.closest('.nav-link')) {
+                menuIcon.classList.remove('open');
+                return;
+            }
+            e.stopPropagation();
+            menuIcon.classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function () {
+            if (window.innerWidth > 767) return;
+            menuIcon.classList.remove('open');
+        });
+
+        // Close menu when a nav link is clicked
+        menuIcon.querySelectorAll('.nav-link').forEach(function (link) {
+            link.addEventListener('click', function () {
+                menuIcon.classList.remove('open');
+            });
+        });
+    }
+
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", () => {
             initSearchButtons();
             initCardInteractions();
+            initHamburgerToggle();
         });
     } else {
         initSearchButtons();
         initCardInteractions();
+        initHamburgerToggle();
     }
 })();
