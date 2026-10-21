@@ -194,6 +194,7 @@ function collectUser(){
   const a=safeParse(localStorage.getItem('shippingAddress'))||safeParse(localStorage.getItem('aarikaShippingAddress'))||{};
   const same=$('#sameAddress').checked;
   const ship=[$('#addressName').textContent,...$('#addressLines').innerHTML.split('<br>').map(x=>x.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'"))];
+  const bill=same?null:[$('#billName').value.trim(),$('#billAddress').value.trim(),$('#billCity').value.trim()+', '+$('#billPin').value.trim(),$('#billState').value.trim()];
   const typedPhone = ($('#walletPhone')?.value || $('#codPhone')?.value || '').trim();
   const phone = typedPhone || a.phone || (u && u.phone) || '';
   return {name:ship[0],phone,email:(u&&u.email)||a.email||'',shipping:ship.slice(1),billing:bill};
@@ -282,7 +283,7 @@ function downloadReceipt(){
   if(!lastReceipt)return;
   const url=URL.createObjectURL(makePdf(lastReceipt));
   const a=document.createElement('a');a.href=url;a.download=`AARIKA-Receipt-${lastReceipt.orderId}.pdf`;
-  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
 }
 function handleSubmit(e){
   e.preventDefault();const error=validateMethod();if(error){showError(error);return}
@@ -308,6 +309,11 @@ function handleSubmit(e){
   $('#formMessage').innerHTML=`<strong>Payment gateway is not attached yet.</strong><br>Your payment of ${money(summary.total)} could not be processed and no money was charged. You can download your receipt with your order, payment and customer details below.<br><button type="button" class="receipt-btn" id="downloadReceipt"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 19.5h14"/></svg> Download Receipt (PDF)</button>`;
   $('#downloadReceipt').addEventListener('click',downloadReceipt);
   $('#demoNote').textContent='Payment gateway not connected - no payment was processed.';
+  const payBtn=$('#payButton');
+  if(payBtn){
+    payBtn.disabled=true;
+    payBtn.textContent='Order Placed ✓';
+  }
 }
 $$('.method').forEach(b=>b.addEventListener('click',()=>setMethod(b.dataset.method)));
 $('#sameAddress').addEventListener('change',e=>{$('#billingFields').classList.toggle('hidden',e.target.checked);$('#shippingAddress').classList.toggle('hidden',!e.target.checked)});
