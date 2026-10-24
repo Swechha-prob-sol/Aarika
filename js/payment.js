@@ -210,80 +210,109 @@ function buildReceipt(summary){
   };
 }
 function pdfSafe(t){return String(t??'').replace(/₹/g,'Rs. ').replace(/[–—−]/g,'-').replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[^\x20-\x7E]/g,'')}
-function makePdf(r){
-  const pages=[[]];let y=800;const L=48,R=547;
-  const page=()=>pages[pages.length-1];
-  const need=h=>{if(y-h<50){pages.push([]);y=800}};
-  const esc=t=>pdfSafe(t).replace(/([\\()])/g,'\\$1');
-  const text=(t,x,size=10,bold=false,gray=0.1)=>page().push(`${gray} g BT /F${bold?2:1} ${size} Tf ${x} ${y} Td (${esc(t)}) Tj ET`);
-  const textR=(t,xr,size=10,bold=false)=>{const w=pdfSafe(t).length*size*(bold?0.56:0.5);text(t,Math.max(L,xr-w),size,bold)};
-  const line=(g=0.8)=>page().push(`${g} G 0.6 w ${L} ${y} m ${R} ${y} l S`);
-  const money_=n=>pdfSafe(money(n));
-  // Header
-  text('AARIKA',L,26,true,0.08);y-=16;text('Since 2026',L,9,false,0.4);
-  textR('PAYMENT RECEIPT',R,14,true);y-=16;textR('Order ID: '+r.orderId,R,10);y-=13;
-  textR('Date: '+r.date.toLocaleString('en-IN'),R,9);y-=12;line();y-=22;
-  // Status box
-  text('STATUS',L,8,true,0.45);y-=14;text(r.status,L,11,true,0.55);y-=15;
-  text('No payment has been charged. A payment gateway is not connected yet.',L,9,false,0.4);y-=24;
-  const section=t=>{need(40);text(t.toUpperCase(),L,10,true,0.1);y-=6;line(0.55);y-=16};
-  const kv=(k,v)=>{need(16);text(k,L,9.5,false,0.4);text(v||'-',L+150,9.5,true,0.1);y-=15};
-  // Customer
-  section('Customer details');
-  kv('Name',r.user.name);if(r.user.phone)kv('Mobile',r.user.phone);if(r.user.email)kv('Email',r.user.email);
-  need(16);text('Shipping address',L,9.5,false,0.4);r.user.shipping.forEach((l,i)=>{need(15);text(l,L+150,9.5,true,0.1);y-=15});
-  need(16);text('Billing address',L,9.5,false,0.4);
-  if(r.user.billing)r.user.billing.forEach(l=>{need(15);text(l,L+150,9.5,true,0.1);y-=15});else{text('Same as shipping address',L+150,9.5,true,0.1);y-=15}
-  y-=10;
-  // Items
-  section('Items ordered');
-  need(18);text('Item',L,9,true,0.4);text('Qty',360,9,true,0.4);text('Unit price',405,9,true,0.4);textR('Amount',R,9,true);y-=14;
-  r.summary.items.forEach(p=>{
-    const nm=pdfSafe(getName(p)),sz=p.size||p.selectedSize||'',col=p.color||p.selectedColor||'';
-    const d=[sz?'Size: '+sz:'',col?'Color: '+col:''].filter(Boolean).join(' | ');
-    need(32);text(nm.slice(0,52),L,10,true,0.1);text(String(getQty(p)),364,10);text(money_(getPrice(p)),405,10);textR(money_(getPrice(p)*getQty(p)),R,10);y-=13;
-    if(d){text(d,L,8.5,false,0.45);y-=12}y-=4;
+// Returns a Promise that resolves with a PDF Blob.
+// The heavy PDF-building work is deferred via setTimeout so the browser
+// can repaint first (e.g. show a loading state on the button).
+function makePdfAsync(r) {
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      try {
+        const pages=[[]];let y=800;const L=48,R=547;
+        const page=()=>pages[pages.length-1];
+        const need=h=>{if(y-h<50){pages.push([]);y=800}};
+        const esc=t=>pdfSafe(t).replace(/([\\()])/g,'\\$1');
+        const text=(t,x,size=10,bold=false,gray=0.1)=>page().push(`${gray} g BT /F${bold?2:1} ${size} Tf ${x} ${y} Td (${esc(t)}) Tj ET`);
+        const textR=(t,xr,size=10,bold=false)=>{const w=pdfSafe(t).length*size*(bold?0.56:0.5);text(t,Math.max(L,xr-w),size,bold)};
+        const line=(g=0.8)=>page().push(`${g} G 0.6 w ${L} ${y} m ${R} ${y} l S`);
+        const money_=n=>pdfSafe(money(n));
+        // Header
+        text('AARIKA',L,26,true,0.08);y-=16;text('Since 2026',L,9,false,0.4);
+        textR('PAYMENT RECEIPT',R,14,true);y-=16;textR('Order ID: '+r.orderId,R,10);y-=13;
+        textR('Date: '+r.date.toLocaleString('en-IN'),R,9);y-=12;line();y-=22;
+        // Status box
+        text('STATUS',L,8,true,0.45);y-=14;text(r.status,L,11,true,0.55);y-=15;
+        text('No payment has been charged. A payment gateway is not connected yet.',L,9,false,0.4);y-=24;
+        const section=t=>{need(40);text(t.toUpperCase(),L,10,true,0.1);y-=6;line(0.55);y-=16};
+        const kv=(k,v)=>{need(16);text(k,L,9.5,false,0.4);text(v||'-',L+150,9.5,true,0.1);y-=15};
+        // Customer
+        section('Customer details');
+        kv('Name',r.user.name);if(r.user.phone)kv('Mobile',r.user.phone);if(r.user.email)kv('Email',r.user.email);
+        need(16);text('Shipping address',L,9.5,false,0.4);r.user.shipping.forEach((l,i)=>{need(15);text(l,L+150,9.5,true,0.1);y-=15});
+        need(16);text('Billing address',L,9.5,false,0.4);
+        if(r.user.billing)r.user.billing.forEach(l=>{need(15);text(l,L+150,9.5,true,0.1);y-=15});else{text('Same as shipping address',L+150,9.5,true,0.1);y-=15}
+        y-=10;
+        // Items
+        section('Items ordered');
+        need(18);text('Item',L,9,true,0.4);text('Qty',360,9,true,0.4);text('Unit price',405,9,true,0.4);textR('Amount',R,9,true);y-=14;
+        r.summary.items.forEach(p=>{
+          const nm=pdfSafe(getName(p)),sz=p.size||p.selectedSize||'',col=p.color||p.selectedColor||'';
+          const d=[sz?'Size: '+sz:'',col?'Color: '+col:''].filter(Boolean).join(' | ');
+          need(32);text(nm.slice(0,52),L,10,true,0.1);text(String(getQty(p)),364,10);text(money_(getPrice(p)),405,10);textR(money_(getPrice(p)*getQty(p)),R,10);y-=13;
+          if(d){text(d,L,8.5,false,0.45);y-=12}y-=4;
+        });
+        line();y-=18;
+        // Summary
+        section('Order summary');
+        const sum=(k,v,b)=>{need(18);text(k,L,b?12:10,b,0.2);textR(v,R,b?12:10,b);y-=b?18:15};
+        sum('Subtotal',money_(r.summary.subtotal));
+        sum('Shipping',r.summary.shipping?money_(r.summary.shipping):'Free');
+        sum('Discount','- '+money_(r.summary.discount));
+        line();y-=16;sum('Total',money_(r.summary.total),true);y-=8;
+        // Payment
+        section('Payment details');
+        r.payment.forEach(([k,v])=>kv(k,v===null?money_(r.summary.total):v));
+        kv('Amount',money_(r.summary.total));kv('Payment status',r.status);
+        y-=14;need(40);line(0.85);y-=14;
+        text('For your security, card CVV, banking passwords/PINs/OTPs are never collected or printed, and account/card numbers are masked.',L,8,false,0.45);y-=12;
+        text('This is a computer-generated receipt and does not confirm a successful payment.',L,8,false,0.45);
+        // Assemble PDF
+        const objs=[];const add=s=>{objs.push(s);return objs.length};
+        add('<< /Type /Catalog /Pages 2 0 R >>');
+        add('PLACEHOLDER');
+        const f1=add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
+        const f2=add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
+        const kids=[];
+        pages.forEach((ops,i)=>{
+          const body=ops.join('\n')+`\n0.5 g BT /F1 8 Tf ${R-60} 28 Td (Page ${i+1} of ${pages.length}) Tj ET`;
+          const c=add(`<< /Length ${body.length} >>\nstream\n${body}\nendstream`);
+          kids.push(add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ${f1} 0 R /F2 ${f2} 0 R >> >> /Contents ${c} 0 R >>`));
+        });
+        objs[1]=`<< /Type /Pages /Count ${kids.length} /Kids [${kids.map(k=>k+' 0 R').join(' ')}] >>`;
+        let out='%PDF-1.4\n';const offs=[];
+        objs.forEach((o,i)=>{offs.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`});
+        const xref=out.length;
+        out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`+offs.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
+        const bytes=new Uint8Array(out.length);for(let i=0;i<out.length;i++)bytes[i]=out.charCodeAt(i)&255;
+        resolve(new Blob([bytes],{type:'application/pdf'}));
+      } catch(err) {
+        reject(err);
+      }
+    }, 0); // defer to next event loop tick so the browser can repaint first
   });
-  line();y-=18;
-  // Summary
-  section('Order summary');
-  const sum=(k,v,b)=>{need(18);text(k,L,b?12:10,b,0.2);textR(v,R,b?12:10,b);y-=b?18:15};
-  sum('Subtotal',money_(r.summary.subtotal));
-  sum('Shipping',r.summary.shipping?money_(r.summary.shipping):'Free');
-  sum('Discount','- '+money_(r.summary.discount));
-  line();y-=16;sum('Total',money_(r.summary.total),true);y-=8;
-  // Payment
-  section('Payment details');
-  r.payment.forEach(([k,v])=>kv(k,v===null?money_(r.summary.total):v));
-  kv('Amount',money_(r.summary.total));kv('Payment status',r.status);
-  y-=14;need(40);line(0.85);y-=14;
-  text('For your security, card CVV, banking passwords/PINs/OTPs are never collected or printed, and account/card numbers are masked.',L,8,false,0.45);y-=12;
-  text('This is a computer-generated receipt and does not confirm a successful payment.',L,8,false,0.45);
-  // Assemble PDF
-  const objs=[];const add=s=>{objs.push(s);return objs.length};
-  add('<< /Type /Catalog /Pages 2 0 R >>');
-  add('PLACEHOLDER');
-  const f1=add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
-  const f2=add('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
-  const kids=[];
-  pages.forEach((ops,i)=>{
-    const body=ops.join('\n')+`\n0.5 g BT /F1 8 Tf ${R-60} 28 Td (Page ${i+1} of ${pages.length}) Tj ET`;
-    const c=add(`<< /Length ${body.length} >>\nstream\n${body}\nendstream`);
-    kids.push(add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ${f1} 0 R /F2 ${f2} 0 R >> >> /Contents ${c} 0 R >>`));
-  });
-  objs[1]=`<< /Type /Pages /Count ${kids.length} /Kids [${kids.map(k=>k+' 0 R').join(' ')}] >>`;
-  let out='%PDF-1.4\n';const offs=[];
-  objs.forEach((o,i)=>{offs.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`});
-  const xref=out.length;
-  out+=`xref\n0 ${objs.length+1}\n0000000000 65535 f \n`+offs.map(o=>String(o).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${objs.length+1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
-  const bytes=new Uint8Array(out.length);for(let i=0;i<out.length;i++)bytes[i]=out.charCodeAt(i)&255;
-  return new Blob([bytes],{type:'application/pdf'});
 }
-function downloadReceipt(){
-  if(!lastReceipt)return;
-  const url=URL.createObjectURL(makePdf(lastReceipt));
-  const a=document.createElement('a');a.href=url;a.download=`AARIKA-Receipt-${lastReceipt.orderId}.pdf`;
-  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+// downloadReceipt is async: it awaits the PDF Promise and shows a
+// loading state on the button while the receipt is being generated.
+async function downloadReceipt(){
+  if(!lastReceipt) return;
+  const btn = $('#downloadReceipt');
+  const originalHTML = btn ? btn.innerHTML : '';
+  // Show loading state
+  if(btn){ btn.disabled = true; btn.textContent = 'Generating PDF…'; }
+  try {
+    const blob = await makePdfAsync(lastReceipt);
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `AARIKA-Receipt-${lastReceipt.orderId}.pdf`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+  } catch(err) {
+    console.error('PDF generation failed:', err);
+    alert('Could not generate the PDF. Please try again.');
+  } finally {
+    // Restore button regardless of success or failure
+    if(btn){ btn.disabled = false; btn.innerHTML = originalHTML; }
+  }
 }
 function handleSubmit(e){
   e.preventDefault();const error=validateMethod();if(error){showError(error);return}
