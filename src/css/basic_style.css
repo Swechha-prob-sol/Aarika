@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+
+.container{
+    width:92%;
+    max-width:1450px;
+    margin:auto;
+}
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+html{
+    scroll-behavior:smooth;
+}
+
+.hero1{
+    height:430px;
+    position:relative;
+    overflow:hidden;
+    width:100%;
+}
+
+.hero1 img,
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+}
+
+.hero1 .hero-content{
+    position:absolute;
+    top:55px;
+    left:13%;
+    color:#294b20;
+    z-index:2;
+}
+
+.hero1 .hero-content h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:50px;
+    line-height:.82;
+}
+
+.hero1 .hero-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:47px;
+    font-style:italic;
+    font-weight:500;
+}
+
+.hero1 .hero-content p{
+    font-size:13px;
+    line-height:1.6;
+    margin:20px 0;
+}
+.hero-btn{
+    display:inline-block;
+    background:#234a16;
+    color:white;
+    padding:13px 24px;
+    text-decoration:none;
+    font-size:10px;
+    font-weight:600;
+    margin-top:5px;
+    transition:.3s ease;
+}
+
+.hero-btn:hover{
+    background:#d8b15d;
+    color:#193d0e;
+}
+
+.hero-content button,
+.collection button{
+    border:0;
+    background:#234a16;
+    color:white;
+    padding:12px 20px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.section{
+    padding:28px 5%;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:23px;
+    color:#294b20;
+}
+
+.leaf-line{
+    text-align:center;
+    color:#69885c;
+    font-size:17px;
+    margin:2px 0 20px;
+}
+
+/* CATEGORIES: Desktop / Laptop (>= 1000px) -> STRICTLY SINGLE ROW */
+section#categories .categories,
+.section .categories{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:clamp(12px, 2.2vw, 36px);
+    flex-wrap:nowrap;
+    width:100%;
+    max-width:1300px;
+    margin:20px auto 30px;
+}
+
+.category{
+    text-align:center;
+    flex:0 0 auto;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transition:transform 0.25s ease;
+}
+
+.category:hover{
+    transform:translateY(-4px);
+}
+
+.category img{
+    width:clamp(105px, 8.8vw, 150px) !important;
+    height:clamp(105px, 8.8vw, 150px) !important;
+    min-width:clamp(105px, 8.8vw, 150px) !important;
+    min-height:clamp(105px, 8.8vw, 150px) !important;
+    max-width:150px !important;
+    max-height:150px !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+    display:block !important;
+    margin:0 auto !important;
+    aspect-ratio:1 / 1 !important;
+    box-shadow:0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.category h4{
+    font-size:clamp(9px, 0.75vw, 11px);
+    margin-top:10px;
+    font-weight:600;
+    letter-spacing:0.05em;
+    color:#294b20;
+    text-transform:uppercase;
+    text-align:center;
+    white-space:nowrap;
+}
+
+.products-section{
+    padding-top:10px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+}
+
+.product{
+    text-align:center;
+}
+
+.product-img{
+    height: 325px;
+    position:relative;
+    overflow:hidden;
+}
+
+.product-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.wishlist,
+.trend-heart{
+    position:absolute;
+    top:8px;
+    right:8px;
+    width:27px;
+    height:27px;
+    border-radius:50%;
+    border:1px solid #9ca18e;
+    background:white;
+    color:#36572b;
+    font-size:18px;
+}
+
+.product h3,
+.trend-card h3{
+    font-size:11px;
+    margin-top:9px;
+    font-weight:500;
+}
+
+.price,
+.trend-card p{
+    font-size:11px;
+    font-weight:bold;
+    margin:5px;
+}
+
+.sizes,
+.small-sizes{
+    display:flex;
+    justify-content:center;
+    gap:2px;
+    margin:7px 0;
+}
+
+.sizes span,
+.small-sizes span{
+    width:25px;
+    height:21px;
+    border:1px solid #babdb1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:8px;
+    background:#fff;
+}
+
+.wish-btn,
+.trend-card button{
+    border:1px solid #536d49;
+    background:#fff;
+    color:#294b20;
+    font-size:8px;
+    padding:7px 12px;
+    font-weight:bold;
+}
+
+.wish-btn:hover,
+.trend-card button:hover{
+    background:#294b20;
+    color:#fff;
+}
+
+.occasions{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.occasion{
+    height:500px;
+    position:relative;
+    overflow:hidden;
+}
+
+.occasion img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.occasion:after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent,rgba(10,35,5,.65));
+}
+
+.occasion div{
+    position:absolute;
+    bottom:15px;
+    left:15px;
+    color:white;
+    z-index:2;
+}
+
+.occasion h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:17px;
+}
+
+.occasion p{
+    font-size:8px;
+    margin-top:5px;
+}
+
+.collection{
+    height:300px;
+    position:relative;
+    overflow:hidden;
+}
+
+.collection img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.collection-text{
+    position:absolute;
+    top:35px;
+    left: 35%;
+    color:#193d0e;
+}
+
+.collection-text small{
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.collection-text h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:29px;
+    margin:8px 0;
+}
+
+.collection-text p{
+    font-size:11px;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+.collection button{
+    background:white;
+    color:#294b20;
+}
+
+.trending{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:13px;
+}
+
+.trend-card{
+    text-align:center;
+
+}
+
+.trend-card > div:first-child{
+    position:relative;
+    height:340px;
+}
+
+.trend-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.trend-heart{
+    top:7px;
+    right:7px;
+}
+
+.inspiration-section{
+    padding-top:0;
+}
+
+.inspiration{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.inspiration div{
+    height:390px;
+    position:relative;
+    overflow:hidden;
+    color:white;
+}
+
+.inspiration img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.inspiration div:after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(20,50,10,.3);
+}
+
+.inspiration h3{
+    position:absolute;
+    left:18px;
+    top:35px;
+    z-index:2;
+    font-family:'Cormorant Garamond',serif;
+    font-size:23px;
+    font-style:italic;
+}
+
+.inspiration span{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    z-index:2;
+    font-size:8px;
+}
+
+
+@media(max-width:1000px){
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    section#categories .categories,
+    .section .categories{
+        flex-wrap:wrap;
+        gap:24px 32px;
+        max-width:680px;
+    }
+
+    .category{
+        flex:0 0 calc(33.333% - 22px);
+        max-width:170px;
+    }
+
+    .category img{
+        width:120px !important;
+        height:120px !important;
+        min-width:120px !important;
+        min-height:120px !important;
+    }
+
+    .trending{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    section#categories .categories,
+    .section .categories{
+        flex-wrap:wrap;
+        gap:16px 10px;
+        padding:0 8px;
+    }
+
+    .category{
+        flex:0 0 calc(33.333% - 8px);
+        max-width:105px;
+    }
+
+    .category img{
+        width:clamp(75px, 22vw, 92px) !important;
+        height:clamp(75px, 22vw, 92px) !important;
+        min-width:clamp(75px, 22vw, 92px) !important;
+        min-height:clamp(75px, 22vw, 92px) !important;
+    }
+
+    .category h4{
+        font-size:8px;
+        margin-top:5px;
+    }
+
+    .hero1{
+        height:350px;
+    }
+
+    .hero1 .hero-content{
+        left:7%;
+    }
+
+    .hero1 .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero1 .hero-content h2{
+        font-size:34px;
+    }
+
+    .products,
+    .trending{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .occasions,
+    .inspiration{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .newsletter{
+        flex-direction:column;
+        padding:25px;
+    }
+}
+
+/* Bottom Navigation Bar - Strictly Hidden on Laptop/Desktop, Shown on Mobile */
+.bottom-nav {
+    display: none !important;
+}
+
+@media(max-width: 600px) {
+    .bottom-nav {
+        display: flex !important;
+    }
+}
